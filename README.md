@@ -31,3 +31,7 @@ Clicker games require a good deal of DOM manipulation, specifically event handle
 ### Hand-written Sketching
 (Add image here)
 
+### Image Sources
+* https://rvros.itch.io/
+* https://jesse-m.itch.io/skeleton-pack
+* https://elthen.itch.io/
