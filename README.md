@@ -50,10 +50,15 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 ### Pseudo-Code Ideas
 To be filled out.
 
-### Image Sources
+### Possible Image Sources
 * https://rvros.itch.io/
 * https://jesse-m.itch.io/skeleton-pack
 * https://elthen.itch.io/
+* https://opengameart.org/content/noble-ranger
+* https://opengameart.org/content/bronze-knight
+* https://opengameart.org/content/pink-thief
+* https://opengameart.org/content/priest
+* https://opengameart.org/content/lpc-wolf-animation
 
 ### Biggest Challenges
 N/A currently. This section is meant as a reflection over the project piece.
