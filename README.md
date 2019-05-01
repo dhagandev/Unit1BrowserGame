@@ -3,7 +3,7 @@
 ### Concept
 Clicker games are based around the idea of buying items and in turn those items make money. For example, in Cookie Clicker, you buy items like grandmas, cookie farms, factories, and so on. Typically these games include upgrades that make your items more effective. These games tend to be a fairly idle game that are great for casual gamers who can open it up, buy a few items, go off and work on something else, and come back later to find that they have enough money to buy something new.
 
-### Why a clicker game?
+### Why a Clicker Game?
 Clicker games require a good deal of DOM manipulation, specifically event handlers on buttons. To make this project more interesting and have more DOM related practice, I plan on having visuals that update every few seconds. For my clicker, I want to make a battle style clicker. The player would be a hero in which they fight off different enemies to earn gold. The gold they earn can then be used to buy upgrades or hire companions to help defeat enemies more quickly. 
 
 ### Win/Lose Logic
@@ -76,6 +76,25 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 * **Contains:** Map what has been bought (Key/Value pair being Upgrade Name/True/False), Map conditions to buy upgrades, Run functions to update what is being upgraded
 
 **_Might derive a parent class for Achievements and Upgrades if there is enough overlap_**
+
+#### Potential Game Loop Options
+1. Initialize information - Game manager class?
+	1. Create the Player's Hero from Hero Class
+	1. Set statistic values to starting values
+1. Randomly generate an enemy - Enemy manager class?
+	1. Spawn this enemy on the battlefield position
+	1. Create health bar above enemy 
+	1. Enemy stays up until enemy health is <= 0
+1. Display all information, including Player's Hero and Enemy (Render?)
+1. Player (and present companions) attack based on attack speed - Game manager class?
+	1. When an attack occurs:
+		1. Add to damage dealt.
+		1. Remove from enemy health
+		1. Check if enemy died
+			1. If enemy died, add to monsters killed
+			1. If enemy died, add coins to money on hand
+			1. If enemy died, add coins to total money earned
+		1. Call attack timers again
 
 ### Possible Image Sources
 * https://rvros.itch.io/
