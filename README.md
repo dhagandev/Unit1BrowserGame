@@ -48,7 +48,11 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 ### Screenshots
 
 ### Pseudo-Code Ideas
-To be filled out.
+#### Potential Inherited Class Structures
+Characters
+| **Contains:** 
+|  * Image
+|  * Name
 
 ### Possible Image Sources
 * https://rvros.itch.io/
