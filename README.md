@@ -49,10 +49,33 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 
 ### Pseudo-Code Ideas
 #### Potential Inherited Class Structures
-Characters
-| **Contains:** 
-|  * Image
-|  * Name
+##### Characters Class
+* **Contains:** Image, Name
+* **Sub-classes:** Hero, Enemy
+
+##### Hero
+* **Contains:** Attack strenth, Attack speed
+* **Sub-classes:** Companion
+
+##### Companion
+* **Contains:** Quantity, Functions to buy companions, Override attack strength to be attack stength x quantity
+* **Sub-classes:** Possibly sub class potential companions (such as wizard or fighter) to be able to preset images for the type of companion and specific base strengths and speeds
+
+##### Enemy
+* **Contains:** Health, Coins dropped function
+* **Sub-classes:** Different types of enemys to make spawning easier; would have preset images, preset health values, preset coin drops (likely as a range that would be randomly picked from, so one enemy may not always return the same amount of coins), and presets determined health
+
+#### Single Instance Classes
+##### Stats 
+* **Contains:** Damage done, Money on hand, Total money earned, Number of enemies killed, Upgrades bought, Achievements earned
+
+#### Achievements 
+* **Contains:** Map of what has been earned (Key/Value pair being Achievement Name/True/False), Map conditions to earn achievements (Such as killed first enemy)
+
+#### Upgrades
+* **Contains:** Map what has been bought (Key/Value pair being Upgrade Name/True/False), Map conditions to buy upgrades, Run functions to update what is being upgraded
+
+**_Might derive a parent class for Achievements and Upgrades if there is enough overlap_**
 
 ### Possible Image Sources
 * https://rvros.itch.io/
