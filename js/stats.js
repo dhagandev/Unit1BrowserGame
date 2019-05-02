@@ -7,11 +7,11 @@ class Stats {
 	let achievementsEarned = null;
 
 	constructor () {
-		dmgDealt = 0;
-		moneyHand = 0;
-		moneyEarned = 0;
-		numKilled = 0;
-		upgradesBought = [];
-		achievementsEarned = [];
+		this.dmgDealt = 0;
+		this.moneyHand = 0;
+		this.moneyEarned = 0;
+		this.numKilled = 0;
+		this.upgradesBought = [];
+		this.achievementsEarned = [];
 	}
 }
