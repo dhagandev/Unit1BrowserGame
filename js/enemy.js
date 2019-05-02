@@ -9,4 +9,8 @@ class Enemy extends Character {
 		this.health = health;
 		this.coinsDropped = coinsDropped;
 	}
+
+	getCoins(min, max) {
+		return Math.random() * (max - min) + min;
+	}
 }
