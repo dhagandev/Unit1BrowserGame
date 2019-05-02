@@ -4,3 +4,45 @@
 	margin: 3px 10px;
 	height: 24%;
 }
+
+.companion-card {
+	background: #fff6c8;
+	/*padding: 10px 0px 10px 10px;*/
+	border-radius: 20px;
+	border: #443025 solid 2px;
+	min-height: 80px;
+	max-height: 100px;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-auto-rows: minmax(min-content, max-content);
+}
+
+.companion-name {
+	padding: 10px 0 10px 10px;
+	margin: 0px 4px;
+	font-size: 26px;
+	grid-column: 1/2;
+	grid-row: 1;
+}
+
+.companion-damage {
+	margin-left: 14px;
+	margin-bottom: 5px;
+	font-size: 22px;
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.companion-quantity {
+	margin-bottom: 5px;
+	font-size: 22px;
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.companion-img {
+	grid-column: 3;
+	grid-row: 1/span 2;
+	border-radius: 20px;
+	margin: auto;
+}
