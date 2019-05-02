@@ -7,8 +7,10 @@ body {
 }
 
 .fight {
-	background: blue;
 	height: 25%;
+	background-image: url(https://img.itch.zone/aW1hZ2UvMTMzODM2LzYxMzkwOS5wbmc=/347x500/To5NoT.png);
+	background-position: bottom center;
+	background-size: height;
 }
 
 .companions {
