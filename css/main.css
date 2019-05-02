@@ -5,25 +5,3 @@ body {
 .game-info {
 	height: 100vh;
 }
-
-.fight {
-	height: 25%;
-	background-image: url(https://img.itch.zone/aW1hZ2UvMTMzODM2LzYxMzkwOS5wbmc=/347x500/To5NoT.png);
-	background-position: bottom center;
-	background-size: height;
-}
-
-.companions {
-	background: pink;
-	height: 25%;
-}
-
-.upgrades {
-	background: green;
-	height: 25%;
-}
-
-.stats {
-	background: red;
-	height: 25%;
-}
