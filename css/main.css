@@ -1,0 +1,27 @@
+body {
+	margin: 0;
+}
+
+.game-info {
+	height: 100vh;
+}
+
+.fight {
+	background: blue;
+	height: 25%;
+}
+
+.companions {
+	background: pink;
+	height: 25%;
+}
+
+.upgrades {
+	background: green;
+	height: 25%;
+}
+
+.stats {
+	background: red;
+	height: 25%;
+}
