@@ -13,6 +13,5 @@ class Stats {
 		this.numKilled = 0;
 		this.upgradesBought = [];
 		this.achievementsEarned = [];
-		console.log("Stats integrated.");
 	}
 }

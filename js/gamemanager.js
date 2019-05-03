@@ -21,14 +21,11 @@ class GameManager {
 		let testFellowAdv = new FellowAdventurer();
 		let testImposter = new Imposter();
 		let testMinotaur = new Minotaur();
-		console.log("GameManager integrated.");
 
 		console.log("====");
 		console.log(testFellowAdv);
 		console.log("====");
-		console.log("====");
 		console.log(testImposter);
-		console.log("====");
 		console.log("====");
 		console.log(testMinotaur);
 		console.log("====");

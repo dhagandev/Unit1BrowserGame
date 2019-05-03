@@ -8,11 +8,11 @@ class EnemyManager {
 		this.currentEnemy = this.randomSpawn();
 		console.log("====");
 		console.log(this.currentEnemy);
+		console.log(this.allEnemyTypes);
 		console.log("====");
 	}
 
 	randomSpawn() {
-		console.log("=== " + this.allEnemyTypes.length + " ===");
 		let index = Math.floor(Math.random() * Math.floor(this.allEnemyTypes.length));
 		let type = this.allEnemyTypes[index];
 		let spawn = null;

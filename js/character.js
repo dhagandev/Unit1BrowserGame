@@ -5,6 +5,5 @@ class Character {
 	constructor(name, image) {
 		this.name = name;
 		this.image = image;
-		console.log("Character integrated.");
 	}
 }

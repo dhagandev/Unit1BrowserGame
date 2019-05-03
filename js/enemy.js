@@ -6,8 +6,6 @@ class Enemy extends Character {
 		super(name, image);
 		this.health = health;
 		this.coinsDropped = coinsDropped;
-
-		console.log("Enemy integrated.");
 	}
 
 	getCoins(min, max) {

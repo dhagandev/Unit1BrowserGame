@@ -6,7 +6,6 @@ class Companion extends Hero {
 		super(name, image, atkStr, atkSpd);
 		this.quantity = quantity;
 		this.costToBuy = costToBuy;
-		console.log("Companion integrated.");
 	}
 
 	attack() {

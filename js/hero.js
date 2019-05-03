@@ -6,7 +6,6 @@ class Hero extends Character {
 		super(name, image);
 		this.atkStr = atkStr;
 		this.atkSpd = atkSpd;
-		console.log("Hero integrated.");
 	}
 
 	attack() {
