@@ -1,30 +1,18 @@
 class EnemyManager {
 	currentEnemy = null;
 	allEnemyTypes = [];
+	gmObject = null;
 
-	constructor() {
+	constructor(gm) {
 		this.allEnemyTypes.push("Imposter");
 		this.allEnemyTypes.push("Minotaur");
 		this.currentEnemy = this.randomSpawn();
-		console.log("====");
-		console.log(this.currentEnemy);
-		console.log(this.allEnemyTypes);
-		console.log("====");
+		this.gmObject = gm;
 	}
 
 	randomSpawn() {
 		let index = Math.floor(Math.random() * this.allEnemyTypes.length);
-		// let index = Math.floor(Math.random() * Math.floor(this.allEnemyTypes.length));
 		let type = this.allEnemyTypes[index];
-
-		console.log("==== Index");
-		console.log(index);
-		console.log("====");
-
-		console.log("==== Type");
-		console.log(type);
-		console.log("====");
-
 		let spawn = null;
 		switch (type) {
 			case "Imposter":
@@ -41,10 +29,18 @@ class EnemyManager {
 
 	destroyEnemy() {
 		//Destroy enemy on death, determine what to pass to game logic and call update Game Logic accordingly
+		this.currentEnemy.image = ""; //Eventually figure out death animation
+		this.updateGameLogic();
 	}
 
 	updateGameLogic() {
 		//Figure out how to and what is best practice for passing up variable changes to stats through game class. I assume it will be getter/setters but other classes need to be flushed out more.
+		let stats = this.gmObject.statsManager;
+		stats.numKilled++;
+		stats.moneyHand += this.currentEnemy.coinsDropped;
+		stats.moneyEarned += this.currentEnemy.coinsDropped;
+		//Should be temp solution to set up game logic. 
+
 	}
 
 }
