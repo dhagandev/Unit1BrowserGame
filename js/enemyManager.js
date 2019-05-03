@@ -13,12 +13,23 @@ class EnemyManager {
 	}
 
 	randomSpawn() {
-		let index = Math.floor(Math.random() * Math.floor(this.allEnemyTypes.length));
+		let index = Math.floor(Math.random() * this.allEnemyTypes.length);
+		// let index = Math.floor(Math.random() * Math.floor(this.allEnemyTypes.length));
 		let type = this.allEnemyTypes[index];
+
+		console.log("==== Index");
+		console.log(index);
+		console.log("====");
+
+		console.log("==== Type");
+		console.log(type);
+		console.log("====");
+
 		let spawn = null;
 		switch (type) {
 			case "Imposter":
 				spawn = new Imposter();
+				break;
 			case "Minotaur":
 				spawn = new Minotaur();
 				break;
