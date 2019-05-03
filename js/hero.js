@@ -1,13 +1,12 @@
-import * from 'character.js';
-
 class Hero extends Character {
-	let atkStr = 0;
-	let atkSpd = 0;
+	atkStr = 0;
+	atkSpd = 0;
 
 	constructor(name, image, atkStr, atkSpd) {
 		super(name, image);
 		this.atkStr = atkStr;
 		this.atkSpd = atkSpd;
+		console.log("Hero integrated.");
 	}
 
 	attack() {

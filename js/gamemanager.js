@@ -1,14 +1,27 @@
 class GameManager {
-	let resetGame = null;
-	let heroObject = null;
-	let companionObjects = null;
-	let enemyManager = null;
+	resetGame = null;
+	heroObject = null;
+	companionObjects = null;
+	enemyManager = null;
+	statsManager = null;
+	achievementManager = null;
+	upgradesManager = null;
+	playerHero = null;
 
-	constructor {
+	constructor() {
 		this.resetGame = false;
 		let heroAtkStr = 1;
 		let heroAtkSpd = 0.5;
-		this.heroObject = new Hero("Just Another Hero", null, heroAtkStr, heroAtkSpd);
+		this.playerHero = new Hero("Just Another Hero", null, heroAtkStr, heroAtkSpd);
 		this.companionObjects = [];
+		this.statsManager = new Stats();
+		this.upgradesManager = new Upgrades();
+		this.achievementManager = new Achievements();
+		let testFellowAdv = new FellowAdventurer();
+		let testImposter = new Imposter();
+		let testMinotaur = new Minotaur();
+		console.log("GameManager integrated.");
 	}
 }
+
+let gm = new GameManager();

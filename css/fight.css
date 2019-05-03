@@ -4,3 +4,24 @@
 	background-position: bottom center;
 	background-size: height;
 }
+
+.title {
+	display: inline-block;
+	color: #479a6d;
+	width: 75%;
+	font-weight: bold;
+	font-size: 34px;
+	float: left;
+	background: #fff6c8;
+}
+
+.money-hand {
+	display: inline-block;
+	color: #479a6d;
+	width: 25%;
+	font-weight: bold;
+	font-size: 34px;
+	float: right;
+	background: #fff6c8;
+	text-align: right;
+}

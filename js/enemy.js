@@ -1,13 +1,13 @@
-import * from 'character.js'
-
 class Enemy extends Character {
-	let health = null;
-	let coinsDropped = null;
+	health = null;
+	coinsDropped = null;
 
 	constructor(name, image, health, coinsDropped) {
 		super(name, image);
 		this.health = health;
 		this.coinsDropped = coinsDropped;
+
+		console.log("Enemy integrated.");
 	}
 
 	getCoins(min, max) {

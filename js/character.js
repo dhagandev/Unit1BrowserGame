@@ -1,9 +1,10 @@
 class Character {
-	let name = null;
-	let image = null;
+	name = null;
+	image = null;
 
 	constructor(name, image) {
 		this.name = name;
 		this.image = image;
+		console.log("Character integrated.");
 	}
 }

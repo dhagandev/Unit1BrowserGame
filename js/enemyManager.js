@@ -1,9 +1,6 @@
-import * from 'imposter.js'
-import * from 'minotaur.js'
-
 class EnemyManager {
-	let currentEnemy = null;
-	let allEnemyTypes = [];
+	currentEnemy = null;
+	allEnemyTypes = [];
 
 	constructor() {
 		this.allEnemyTypes.push("Imposter");
@@ -21,7 +18,7 @@ class EnemyManager {
 			case "Minotaur":
 				spawn = new Minotaur();
 				break;
-			case default:
+			default:
 				break;
 		};
 	}

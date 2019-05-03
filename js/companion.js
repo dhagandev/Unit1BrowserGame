@@ -1,13 +1,12 @@
-import * from 'hero.js'
-
 class Companion extends Hero {
-	let quantity = 0;
-	let costToBuy = 0;
+	quantity = 0;
+	costToBuy = 0;
 
 	constructor(name, image, atkStr, atkSpd, quantity, costToBuy) {
 		super(name, image, atkStr, atkSpd);
 		this.quantity = quantity;
 		this.costToBuy = costToBuy;
+		console.log("Companion integrated.");
 	}
 
 	attack() {

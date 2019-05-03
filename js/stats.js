@@ -1,10 +1,10 @@
 class Stats {
-	let dmgDealt = null;
-	let moneyHand = null;
-	let moneyEarned = null;
-	let numKilled = null;
-	let upgradesBought = null;
-	let achievementsEarned = null;
+	dmgDealt = null;
+	moneyHand = null;
+	moneyEarned = null;
+	numKilled = null;
+	upgradesBought = null;
+	achievementsEarned = null;
 
 	constructor () {
 		this.dmgDealt = 0;
@@ -13,5 +13,6 @@ class Stats {
 		this.numKilled = 0;
 		this.upgradesBought = [];
 		this.achievementsEarned = [];
+		console.log("Stats integrated.");
 	}
 }
