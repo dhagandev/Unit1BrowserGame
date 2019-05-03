@@ -5,6 +5,6 @@ class Imposter extends Enemy {
 		console.log("Imposter integrated.");
 		super("Imp-oster", null, health, coinsDropped);
 		coinsDropped = super.getCoins(4, 7);
-		super.coinDropped = coinsDropped;
+		super.coinsDropped = coinsDropped;
 	}
 }

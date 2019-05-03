@@ -5,12 +5,16 @@ class EnemyManager {
 	constructor() {
 		this.allEnemyTypes.push("Imposter");
 		this.allEnemyTypes.push("Minotaur");
-		this.currentEnemy = randomSpawn();
+		this.currentEnemy = this.randomSpawn();
+		console.log("====");
+		console.log(this.currentEnemy);
+		console.log("====");
 	}
 
 	randomSpawn() {
-		let index = Math.getRandomInt(this.allEnemyTypes.length);
-		let type = allEnemyTypes[index];
+		console.log("=== " + this.allEnemyTypes.length + " ===");
+		let index = Math.floor(Math.random() * Math.floor(this.allEnemyTypes.length));
+		let type = this.allEnemyTypes[index];
 		let spawn = null;
 		switch (type) {
 			case "Imposter":
@@ -21,6 +25,7 @@ class EnemyManager {
 			default:
 				break;
 		};
+		return spawn;
 	}
 
 	destroyEnemy() {

@@ -11,6 +11,6 @@ class Enemy extends Character {
 	}
 
 	getCoins(min, max) {
-		return Math.random() * (max - min) + min;
+		return Math.round(Math.random() * (max - min) + min);
 	}
 }
