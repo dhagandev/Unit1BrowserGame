@@ -35,7 +35,7 @@ class Companion extends Hero {
 				break;
 		};
 		companionImg.src = this.image;
-		companionImg.setAttribute("alt", this.name + "s\' image");
+		companionImg.setAttribute("alt", this.name + "\'s image");
 
 		companionCard.append(companionName);
 		companionCard.append(companionDamage);

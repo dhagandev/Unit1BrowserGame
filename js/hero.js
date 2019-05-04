@@ -24,7 +24,7 @@ class Hero extends Character {
 		let companionImg = document.createElement("img");
 		companionImg.classList.add("companion-img");
 		companionImg.src = this.image;
-		companionImg.setAttribute("alt", this.name + "s\' image");
+		companionImg.setAttribute("alt", this.name + "\'s image");
 
 		companionCard.append(companionName);
 		companionCard.append(companionDamage);

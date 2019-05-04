@@ -24,3 +24,8 @@
 	float: right;
 	text-align: right;
 }
+
+.arena {
+	height: 80%;
+	width: 100%;
+}
