@@ -28,10 +28,19 @@
 .arena {
 	height: 80%;
 	width: 100%;
+	position: relative;
 }
 
 .enemy-pos {
 	transform: scale(3, 3);
 	float: right;
 	margin: 12% 20% 0 0;
+}
+
+.hero-pos {
+	transform: scale(2.25, 2.25) translate(40px, 30px);
+}
+
+.companion-pos {
+	transform: scale(2.25, 2.25) translate(30px, 40px);
 }

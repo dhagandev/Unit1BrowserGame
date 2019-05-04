@@ -16,7 +16,9 @@ class GameManager {
 		this.playerHero.createHeroCard();
 		this.companionObjects = [];
 		this.companionObjects = [new FellowAdventurer()];
-		this.companionObjects[0].createCompanionCard();
+		this.companionObjects.forEach(function(ele) {
+			ele.createCompanionCard();
+		});
 		this.enemyManager = new EnemyManager(this);
 		this.statsManager = new Stats();
 		this.upgradesManager = new Upgrades();
@@ -38,8 +40,28 @@ class GameManager {
 		enemyPosition.classList.add("enemy-pos");
 		enemyPosition.src = this.enemyManager.currentEnemy.image;
 		enemyPosition.setAttribute("alt", this.enemyManager.currentEnemy.name + "\'s image");
-
 		fightArena.append(enemyPosition);
+
+		for (let i = 0; i < this.companionObjects.length; i++) {
+			let companionPosition = document.createElement("img");
+			companionPosition.classList.add("companion-pos");
+			let compName = this.companionObjects[i].name;
+			switch (compName) {
+				case "Fellow Adventurer":
+					companionPosition.classList.add("fellowAdv");
+					break;
+				default:
+					break;
+			};
+			companionPosition.src = this.companionObjects[i].image;
+			fightArena.append(companionPosition);
+		}
+
+		let heroPosition = document.createElement("img");
+		heroPosition.classList.add("hero-pos");
+		heroPosition.src = this.playerHero.image;
+		fightArena.append(heroPosition);
+
 		fightBlock.append(fightArena);
 	}
 }
