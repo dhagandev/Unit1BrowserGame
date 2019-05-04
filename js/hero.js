@@ -13,6 +13,9 @@ class Hero extends Character {
 		let companionCard = document.createElement("div");
 		companionCard.classList.add("companion-card");
 
+		let companionGrid = document.createElement("section");
+		companionGrid.classList.add("companion-grid");
+
 		let companionName = document.createElement("div");
 		companionName.classList.add("companion-name");
 		companionName.innerHTML = this.name;
@@ -26,9 +29,10 @@ class Hero extends Character {
 		companionImg.src = this.image;
 		companionImg.setAttribute("alt", this.name + "\'s image");
 
-		companionCard.append(companionName);
-		companionCard.append(companionDamage);
-		companionCard.append(companionImg)
+		companionGrid.append(companionName);
+		companionGrid.append(companionDamage);
+		companionCard.append(companionGrid);
+		companionCard.append(companionImg);
 		companionSection.append(companionCard);
 	}
 

@@ -15,10 +15,14 @@
 	border: #443025 solid 2px;
 	min-height: 80px;
 	max-height: 100px;
+}
+
+.companion-grid {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	grid-auto-rows: minmax(min-content, max-content);
 	align-items: center;
+	max-width: 75%;
 }
 
 .companion-name {
@@ -46,12 +50,9 @@
 }
 
 .companion-img {
-	margin: 0 5px 5px 0;
-	grid-column: 3;
-	grid-row: 1/span 2;
+	margin-top: -85px; /*TEMP FIX*/
+	float:right;
 	height: 100%;
-	width: auto;
-	align-self: center;
-	vertical-align: middle;
+	width: 25%;
 	transform: scaleX(-1);
 }
