@@ -12,45 +12,48 @@
 	border-radius: 20px;
 	border: #443025 solid 2px;
 	min-height: 80px;
-	max-height: 100px;
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	grid-auto-rows: minmax(min-content, max-content);
+	align-items: center;
+	justify-items: center;
 }
 
 .upgrade-name {
 	padding: 10px 0 10px 10px;
 	margin: 0px 4px;
-	font-size: 5vw;
+	font-size: 6vw;
 	grid-column: 1/2;
 	grid-row: 1;
 	font-weight: bold;
 }
 
 .upgrade-description {
-	margin: auto;
-	font-size: 22px;
+	margin: auto 15px 10px;
+	font-size: 4.5vw;
 	grid-column: 1;
 	grid-row: 2;
 }
 
 .upgrade-cost {
-	margin: 10px 0;
-	font-size: 22px;
+	margin: 10px 0 0;
+	font-size: 5.5vw;
+	font-weight: bold;
 	grid-column: 2;
 	grid-row: 1;
 	text-align: center;
 }
 
 .buy-upgrade {
-	margin: 0 10px 7px;
+	margin: 0 10px;
 	font-size: 22px;
 	grid-column: 2;
 	grid-row: 2;
 	background: #479a6d;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 1.5em;
-	height: 1.5em;
+	line-height: 1.75em;
+	height: 1.75em;
+	min-width: 100px;
 	border-radius: 25px;
 }
