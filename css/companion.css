@@ -1,3 +1,5 @@
+/*BUG: Sometimes the companion images will be off screen (too far right), inconsisten bug*/
+
 .companions {
 	background: #c98139;
 	border: #b07030 solid 5px;
