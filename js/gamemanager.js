@@ -13,6 +13,7 @@ class GameManager {
 		let heroAtkStr = 1;
 		let heroAtkSpd = 0.5;
 		this.playerHero = new Hero("Just Another Hero", null, heroAtkStr, heroAtkSpd);
+		this.playerHero.createHeroCard();
 		this.companionObjects = [];
 		this.enemyManager = new EnemyManager(this);
 		this.statsManager = new Stats();

@@ -5,23 +5,22 @@
 	background-size: height;
 }
 
-.title {
+.heading {
 	display: inline-block;
 	color: #479a6d;
-	width: 75%;
+	background: #fff6c8;
 	font-weight: bold;
 	font-size: 34px;
+	width: 100%;
+}
+
+.title {
+	width: 75%;
 	float: left;
-	background: #fff6c8;
 }
 
 .money-hand {
-	display: inline-block;
-	color: #479a6d;
 	width: 25%;
-	font-weight: bold;
-	font-size: 34px;
 	float: right;
-	background: #fff6c8;
 	text-align: right;
 }
