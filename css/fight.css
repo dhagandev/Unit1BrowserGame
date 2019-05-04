@@ -29,3 +29,9 @@
 	height: 80%;
 	width: 100%;
 }
+
+.enemy-pos {
+	transform: scale(3, 3);
+	float: right;
+	margin: 12% 20% 0 0;
+}
