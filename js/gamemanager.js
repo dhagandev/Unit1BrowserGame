@@ -12,7 +12,7 @@ class GameManager {
 		this.resetGame = false;
 		let heroAtkStr = 1;
 		let heroAtkSpd = 0.5;
-		this.playerHero = new Hero("Just Another Hero", null, heroAtkStr, heroAtkSpd);
+		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
 		this.playerHero.createHeroCard();
 		this.companionObjects = [];
 		this.companionObjects = [new FellowAdventurer()];

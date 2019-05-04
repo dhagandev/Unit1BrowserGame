@@ -4,6 +4,6 @@ class FellowAdventurer extends Companion {
 		let atkSpd = 2;
 		let cost = 20
 		let quantity = 0;
-		super("Fellow Adventurer", null, atkStr, atkSpd, quantity, cost);
+		super("Fellow Adventurer", "./images/FellowAdventurer.png", atkStr, atkSpd, quantity, cost);
 	}
 }

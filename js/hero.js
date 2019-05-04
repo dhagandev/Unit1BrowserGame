@@ -21,14 +21,14 @@ class Hero extends Character {
 		companionDamage.classList.add("companion-damage");
 		companionDamage.innerHTML = this.atkStr + "dmg/" + this.atkSpd + "sec";
 
-		// let companionImg = document.createElement("img");
-		// companionImg.classList.add("companion-img");
-		// companionImg.src = this.image;
-		// companionImg.setAttribute("alt", this.name + "s\' image");
+		let companionImg = document.createElement("img");
+		companionImg.classList.add("companion-img");
+		companionImg.src = this.image;
+		companionImg.setAttribute("alt", this.name + "s\' image");
 
 		companionCard.append(companionName);
 		companionCard.append(companionDamage);
-		// companionCard.append(companionImg)
+		companionCard.append(companionImg)
 		companionSection.append(companionCard);
 	}
 
