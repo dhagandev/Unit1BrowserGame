@@ -8,6 +8,35 @@ class Companion extends Hero {
 		this.costToBuy = costToBuy;
 	}
 
+	createCompanionCard() {
+		let companionSection = document.querySelector(".companions");
+		let companionCard = document.createElement("div");
+		companionCard.classList.add("companion-card");
+
+		let companionName = document.createElement("div");
+		companionName.classList.add("companion-name");
+		companionName.innerHTML = this.name;
+
+		let companionQuantity = document.createElement("div");
+		companionQuantity.classList.add("companion-quantity");
+		companionQuantity.innerHTML = this.quantity;
+
+		let companionDamage = document.createElement("div");
+		companionDamage.classList.add("companion-damage");
+		companionDamage.innerHTML = this.atkStr + "dmg/" + this.atkSpd + "sec";
+
+		// let companionImg = document.createElement("img");
+		// companionImg.classList.add("companion-img");
+		// companionImg.src = this.image;
+		// companionImg.setAttribute("alt", this.name + "s\' image");
+
+		companionCard.append(companionName);
+		companionCard.append(companionDamage);
+		companionCard.append(companionQuantity);
+		// companionCard.append(companionImg)
+		companionSection.append(companionCard);
+	}
+
 	attack() {
 		//Override to be quantity x attack str
 	}

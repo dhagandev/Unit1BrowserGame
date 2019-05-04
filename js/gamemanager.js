@@ -15,6 +15,8 @@ class GameManager {
 		this.playerHero = new Hero("Just Another Hero", null, heroAtkStr, heroAtkSpd);
 		this.playerHero.createHeroCard();
 		this.companionObjects = [];
+		this.companionObjects = [new FellowAdventurer()];
+		this.companionObjects[0].createCompanionCard();
 		this.enemyManager = new EnemyManager(this);
 		this.statsManager = new Stats();
 		this.upgradesManager = new Upgrades();
