@@ -1,11 +1,15 @@
+const MILLI = 1000;
+
 class Hero extends Character {
 	atkStr = 0;
 	atkSpd = 0;
+	heroAtkInterval = null;
 
 	constructor(name, image, atkStr, atkSpd) {
 		super(name, image);
 		this.atkStr = atkStr;
 		this.atkSpd = atkSpd;
+		// this.heroAtkInterval = setInterval(this.attack, atkSpd * MILLI);
 	}
 
 	createHeroCard() {
@@ -38,5 +42,6 @@ class Hero extends Character {
 
 	attack() {
 		//Determine the amount of damage to caused, pass to game play class to pass to enemy
+		// console.log("Attack");
 	}
 }

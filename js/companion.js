@@ -1,11 +1,13 @@
 class Companion extends Hero {
 	quantity = 0;
 	costToBuy = 0;
+	companionAtkInterval = null;
 
 	constructor(name, image, atkStr, atkSpd, quantity, costToBuy) {
 		super(name, image, atkStr, atkSpd);
 		this.quantity = quantity;
 		this.costToBuy = costToBuy;
+		// this.companionAtkInterval = setInterval(this.attack, atkSpd * MILLI);
 	}
 
 	createCompanionCard() {
@@ -42,6 +44,7 @@ class Companion extends Hero {
 	}
 
 	attack() {
+		// console.log("Huzzah");
 		//Override to be quantity x attack str
 	}
 

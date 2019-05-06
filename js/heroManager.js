@@ -1,6 +1,8 @@
 class HeroManager {
 	playerHero = null;
+	playerInterval = null;
 	companionObjects = null;
+	companionIntervals = null;
 	gmObject = null;
 
 	constructor(gm) {
@@ -10,10 +12,21 @@ class HeroManager {
 		let heroAtkSpd = 0.5;
 		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
 		this.playerHero.createHeroCard();
-		this.companionObjects = [new FellowAdventurer()];
+		console.log(this.gmObject);
+		this.playerInterval = this.attackEnemy(this.playerHero);
+
+		this.companionObjects = [/*new FellowAdventurer()*/];
 		this.companionObjects.forEach(function(ele) {
 			ele.createCompanionCard();
 		});
+	}
+
+	attackEnemy(attacker) {
+		return setInterval(() => {
+			console.log("Before e health " + this.gmObject.enemyManager.currentEnemy.health);
+			this.gmObject.enemyManager.currentEnemy.health -= attacker.atkStr;
+			console.log("After e health " + this.gmObject.enemyManager.currentEnemy.health);
+		}, this.playerHero.atkSpd * 1000);
 	}
 
 	getHeroDomElement() {

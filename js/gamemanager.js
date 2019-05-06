@@ -8,10 +8,10 @@ class GameManager {
 
 	constructor() {
 		this.resetGame = false;
-		this.heroManager = new HeroManager(this);
 		this.enemyManager = new EnemyManager(this);
+		this.heroManager = new HeroManager(this);
 		this.statsManager = new Stats();
-		this.upgradesManager = new Upgrades();
+		this.upgradesManager = new Upgrades(this);
 		this.achievementManager = new Achievements();
 	}
 

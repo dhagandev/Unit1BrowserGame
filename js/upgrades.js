@@ -40,6 +40,5 @@ class Upgrades {
 
 			upgradesSection.append(upgradeCard);
 		}
-		console.log(upgradesSection);
 	}
 }
