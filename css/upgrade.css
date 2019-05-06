@@ -4,6 +4,7 @@
 	margin: 3px 10px;
 	height: 24%;
 	overflow: scroll;
+	max-height: 175px;
 }
 
 .upgrade-card {
@@ -30,7 +31,7 @@
 
 .upgrade-description {
 	margin: auto 15px 10px;
-	font-size: 4.5vw;
+	font-size: 6vw;
 	grid-column: 1;
 	grid-row: 2;
 }
@@ -46,7 +47,7 @@
 
 .buy-upgrade {
 	margin: 0 10px;
-	font-size: 22px;
+	font-size: 6vw;
 	grid-column: 2;
 	grid-row: 2;
 	background: #479a6d;

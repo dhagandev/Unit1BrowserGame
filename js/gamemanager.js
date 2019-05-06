@@ -32,6 +32,12 @@ class GameManager {
 		monHand.innerHTML = this.statsManager.moneyHand + " gp";
 		fightHeadBlock.append(monHand);
 
+		let enemyHealthBar = document.createElement("progress");
+		enemyHealthBar.classList.add("health-bar");
+		enemyHealthBar.setAttribute("max", this.enemyManager.currentEnemy.health);
+		enemyHealthBar.setAttribute("value", this.enemyManager.currentEnemy.health);
+		fightHeadBlock.append(enemyHealthBar);
+
 		let fightBlock = document.querySelector(".fight");
 		let fightArena = document.createElement("div");
 		fightArena.classList.add("arena");

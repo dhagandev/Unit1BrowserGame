@@ -1,5 +1,5 @@
 .fight {
-	height: 25%;
+	height: 30%;
 	background-image: url(https://img.itch.zone/aW1hZ2UvMTMzODM2LzYxMzkwOS5wbmc=/347x500/To5NoT.png);
 	background-position: bottom center;
 	background-size: height;
@@ -7,7 +7,6 @@
 
 .heading {
 	display: inline-block;
-	color: #479a6d;
 	background: #fff6c8;
 	font-weight: bold;
 	font-size: 34px;
@@ -15,24 +14,27 @@
 }
 
 .title {
-	width: 75%;
+	margin: 3px 0 0 3px;
+	width: 74%;
 	float: left;
 }
 
 .money-hand {
-	width: 25%;
+	margin: 3px 3px 0 0;
+	width: 24%;
 	float: right;
 	text-align: right;
 }
 
 .arena {
+	max-height:150px;
 	height: 80%;
 	width: 100%;
 	position: relative;
 }
 
 .enemy-pos {
-	transform: scale(3, 3);
+	transform: scale(2.5, 2.5) translateY(5px);
 	float: right;
 	margin: 12% 20% 0 0;
 }
@@ -43,4 +45,10 @@
 
 .companion-pos {
 	transform: scale(2.25, 2.25) translate(30px, 40px);
+}
+
+.health-bar {
+	background: #479a6d;
+	height: 20px;
+	width: 100%;
 }
