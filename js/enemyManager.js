@@ -43,4 +43,20 @@ class EnemyManager {
 
 	}
 
+	getEnemyPositionElement() {
+		let enemyPosition = document.createElement("img");
+		enemyPosition.classList.add("enemy-pos");
+		enemyPosition.src = this.currentEnemy.image;
+		enemyPosition.setAttribute("alt", this.currentEnemy.name + "\'s image");
+		return enemyPosition;
+	}
+
+	getEnemyHealthBar() {
+		let enemyHealthBar = document.createElement("progress");
+		enemyHealthBar.classList.add("health-bar");
+		enemyHealthBar.setAttribute("max", this.currentEnemy.health);
+		enemyHealthBar.setAttribute("value", this.currentEnemy.health);
+		return enemyHealthBar;
+	}
+
 }
