@@ -86,6 +86,26 @@ class Upgrades {
 				default:
 					break;
 			};
+
+			let upgradeCardArr = document.getElementsByClassName("upgrade-card");
+			let upgradeCard = null;
+			for (let i = 0; i < upgradeCardArr.length; i++) {
+				let cardVal = upgradeCardArr[i].childNodes[0].textContent;
+				let upsVal = upgrade.name;
+				if (cardVal === upsVal) {
+					upgradeCard = upgradeCardArr[i];
+					break;
+				}
+			}
+
+			let upParent = upgradeCard.parentNode;
+			upParent.removeChild(upgradeCard);
+			if (!upParent.hasChildNodes()) {
+				upParent.parentNode.removeChild(upParent);
+			}
+			let statsArea = document.querySelector(".stat-area");
+			statsArea.insertBefore(upgradeCard, statsArea.lastChild.nextSibling);
+
 		}
 	}
 }

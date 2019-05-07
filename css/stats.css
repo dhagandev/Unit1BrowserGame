@@ -14,7 +14,7 @@
 	height: 100%;
 }
 
-.player-stats {
+.player-stats, .upgrade-stats {
 	font-size: 36px;
 	font-weight: bold;
 	text-align: center;
