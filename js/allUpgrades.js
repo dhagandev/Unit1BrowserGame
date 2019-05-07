@@ -7,7 +7,8 @@ let upgradeList = `{
 			"descrip": "+1 Attack Strength to your hero.",
 			"charAffected": "Hero",
 			"thingAffected": "Attack Strength",
-			"effect": 1
+			"effect": 1,
+			"bought": false
 		},
 		{
 			"name": "Basket o Onions",
@@ -16,7 +17,8 @@ let upgradeList = `{
 			"descrip": "+2 Attack Strength to your hero.",
 			"charAffected": "Hero",
 			"thingAffected": "Attack Strength",
-			"effect": 2
+			"effect": 2,
+			"bought": false
 		},
 		{
 			"name": "Bard's Song",
@@ -25,7 +27,8 @@ let upgradeList = `{
 			"descrip": "-0.25 seconds from Attack Speed of your fellow adventurer.",
 			"charAffected": "Fellow Adventurer",
 			"thingAffected": "Attack Speed",
-			"effect": -0.25
+			"effect": -0.25,
+			"bought": false
 		}
 	]
 }`
