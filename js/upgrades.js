@@ -57,14 +57,14 @@ class Upgrades {
 			let attr = upgrade.thingAffected;
 			let effect = upgrade.effect;
 
+			let companionNameArr = document.getElementsByClassName("companion-name");
+
 			switch(char) {
 				case "Hero":
-					let heroElemArr = document.getElementsByClassName("companion-name");
-					
 					let heroElem = null;
-					for (let i = 0; i < heroElemArr.length; i++) {
-						if (heroElemArr[i].innerHTML === "Just Another Hero") {
-							heroElem = heroElemArr[i];
+					for (let i = 0; i < companionNameArr.length; i++) {
+						if (companionNameArr[i].innerHTML === "Just Another Hero") {
+							heroElem = companionNameArr[i];
 							break;
 						}
 					}
@@ -82,7 +82,35 @@ class Upgrades {
 					heroDmgSec.innerHTML = hero.atkStr + "dmg/" + hero.atkSpd + "sec";
 
 					break;
-				
+				case "Fellow Adventurer":
+					let felAdvCard = null;
+					for (let i = 0; i < companionNameArr.length; i++) {
+						if (companionNameArr[i].innerHTML === "Fellow Adventurer") {
+							felAdvCard = companionNameArr[i];
+							break;
+						}
+					}
+
+					let felAdvDmg = felAdvCard.nextSibling;
+					let felAdvObj = null;
+					let compObjs = this.gmObject.heroManager.companionObjects;
+					for (let i = 0; i < compObjs.length; i++) {
+						if (compObjs[i].name === "Fellow Adventurer") {
+							felAdvObj = compObjs[i];
+							break;
+						}
+					}
+
+					if (attr === "Attack Strength") {
+						felAdvObj.atkStr += effect;
+					}
+					else if (attr === "Attack Speed") {
+						felAdvObj.atkSpd += effect;
+					}
+
+					felAdvDmg.innerHTML = felAdvObj.atkStr + "dmg/" + felAdvObj.atkSpd + "sec";
+
+					break;
 				default:
 					break;
 			};

@@ -34,7 +34,7 @@ class GameManager {
 
 		let companionElements = this.heroManager.getCompanionDomElements();
 		companionElements.forEach(function(ele) {
-			fightBlock.append(ele);
+			fightArena.append(ele);
 		})
 
 		let heroPosition = this.heroManager.getHeroDomElement();

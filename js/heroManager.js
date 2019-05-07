@@ -13,19 +13,28 @@ class HeroManager {
 		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
 		this.playerHero.createHeroCard();
 		this.playerInterval = this.attackEnemy(this.playerHero);
-
-		this.companionObjects = [/*new FellowAdventurer()*/];
-		this.companionObjects.forEach(function(ele) {
+		this.companionIntervals = [];
+		this.companionObjects = [new FellowAdventurer()];
+		this.companionObjects[0].quantity = 2;
+		this.companionObjects.forEach((ele) => {
 			ele.createCompanionCard();
+			let companionInterval = this.attackEnemy(ele);
+			this.companionIntervals.push(companionInterval);
 		});
 	}
 
 	attackEnemy(attacker) {
 		return setInterval(() => {
-			this.gmObject.enemyManager.currentEnemy.health -= attacker.atkStr;
-			this.gmObject.statsManager.dmgDealt += attacker.atkStr;
+			let atk = attacker.atkStr;
+			console.log("attacker " + atk);
+			if (attacker instanceof Companion) {
+				atk *= attacker.quantity;
+				console.log("attacker " + atk);
+			}
+			this.gmObject.enemyManager.currentEnemy.health -= atk;
+			this.gmObject.statsManager.dmgDealt += atk;
 			this.gmObject.enemyManager.enemyCheck();
-		}, this.playerHero.atkSpd * 1000);
+		}, attacker.atkSpd * 1000);
 	}
 
 	getHeroDomElement() {
