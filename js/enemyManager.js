@@ -30,6 +30,10 @@ class EnemyManager {
 	enemyCheck() {
 		let healthBar = document.querySelector(".health-bar");
 		healthBar.setAttribute("value", this.currentEnemy.health);
+
+		let stats = this.gmObject.statsManager;
+		stats.deconstructStats();
+		stats.constructStats();
 		if (this.currentEnemy.health <= 0){
 			clearInterval(this.gmObject.heroManager.playerInterval);
 			this.destroyEnemy();
@@ -38,7 +42,6 @@ class EnemyManager {
 
 			let heroMan = this.gmObject.heroManager;
 			heroMan.playerInterval = heroMan.attackEnemy(heroMan.playerHero);
-			console.log(this.currentEnemy);
 		}
 	}
 
@@ -61,7 +64,8 @@ class EnemyManager {
 		enemyPosition.parentNode.removeChild(enemyPosition);
 
 		let enemyHealthBar = document.querySelector(".health-bar");
-		enemyHealthBar.parentNode.removeChild(enemyHealthBar);		
+		enemyHealthBar.parentNode.removeChild(enemyHealthBar);
+
 	}
 
 	updateGameLogic() {

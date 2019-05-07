@@ -12,7 +12,6 @@ class HeroManager {
 		let heroAtkSpd = 0.5;
 		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
 		this.playerHero.createHeroCard();
-		console.log(this.gmObject);
 		this.playerInterval = this.attackEnemy(this.playerHero);
 
 		this.companionObjects = [/*new FellowAdventurer()*/];
@@ -24,7 +23,6 @@ class HeroManager {
 	attackEnemy(attacker) {
 		return setInterval(() => {
 			this.gmObject.enemyManager.currentEnemy.health -= attacker.atkStr;
-			console.log(this.gmObject.enemyManager.currentEnemy.health);
 			this.gmObject.statsManager.dmgDealt += attacker.atkStr;
 			this.gmObject.enemyManager.enemyCheck();
 		}, this.playerHero.atkSpd * 1000);

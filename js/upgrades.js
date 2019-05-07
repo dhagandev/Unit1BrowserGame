@@ -7,7 +7,6 @@ class Upgrades {
 		//That will lead to how to modify elements
 		this.gmObject = gm;
 		this.allUpgrades = JSON.parse(upgradeList).upgrades;
-		console.log(this.allUpgrades);
 		this.createUpgradeCard();
 	}
 
@@ -35,7 +34,6 @@ class Upgrades {
 			upgradeButton.innerHTML = "Buy";
 			upgradeButton.addEventListener('click', () => {
 				this.applyUpgrade(upgradeObj);
-				console.log(upgradeObj.name);
 			});
 
 			upgradeCard.append(upgradeName);
@@ -51,6 +49,9 @@ class Upgrades {
 		let stats = this.gmObject.statsManager;
 		if (stats.moneyHand - upgrade.cost >= 0 && !upgrade.bought) {
 			stats.moneyHand -= upgrade.cost;
+			let monHand = document.querySelector(".money-hand");
+			monHand.innerHTML = stats.moneyHand;
+
 			upgrade.bought = true;
 			let char = upgrade.charAffected;
 			let attr = upgrade.thingAffected;
@@ -58,6 +59,18 @@ class Upgrades {
 
 			switch(char) {
 				case "Hero":
+					let heroElemArr = document.getElementsByClassName("companion-name");
+					
+					let heroElem = null;
+					for (let i = 0; i < heroElemArr.length; i++) {
+						if (heroElemArr[i].innerHTML === "Just Another Hero") {
+							heroElem = heroElemArr[i];
+							break;
+						}
+					}
+
+					let heroDmgSec = heroElem.nextSibling;
+
 					let hero = this.gmObject.heroManager.playerHero;
 					if (attr === "Attack Strength") {
 						hero.atkStr += effect;
@@ -65,6 +78,9 @@ class Upgrades {
 					else if (attr === "Attack Speed") {
 						hero.atkSpd += effect;
 					}
+
+					heroDmgSec.innerHTML = hero.atkStr + "dmg/" + hero.atkSpd + "sec";
+
 					break;
 				
 				default:
