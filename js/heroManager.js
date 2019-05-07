@@ -23,9 +23,9 @@ class HeroManager {
 
 	attackEnemy(attacker) {
 		return setInterval(() => {
-			console.log("Before e health " + this.gmObject.enemyManager.currentEnemy.health);
 			this.gmObject.enemyManager.currentEnemy.health -= attacker.atkStr;
-			console.log("After e health " + this.gmObject.enemyManager.currentEnemy.health);
+			this.gmObject.statsManager.dmgDealt += attacker.atkStr;
+			this.gmObject.enemyManager.enemyCheck();
 		}, this.playerHero.atkSpd * 1000);
 	}
 

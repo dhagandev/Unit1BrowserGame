@@ -27,10 +27,41 @@ class EnemyManager {
 		return spawn;
 	}
 
+	enemyCheck() {
+		let healthBar = document.querySelector(".health-bar");
+		healthBar.setAttribute("value", this.currentEnemy.health);
+		if (this.currentEnemy.health <= 0){
+			clearInterval(this.gmObject.heroManager.playerInterval);
+			this.destroyEnemy();
+			this.updateGameLogic();
+			this.respawnEnemy();
+
+			let heroMan = this.gmObject.heroManager;
+			heroMan.playerInterval = heroMan.attackEnemy(heroMan.playerHero);
+			console.log(this.currentEnemy);
+		}
+	}
+
+	respawnEnemy() {
+		this.currentEnemy = this.randomSpawn();
+
+		let fightHeadBlock = document.querySelector(".heading");
+		let enemyHealthBar = this.getEnemyHealthBar();
+		fightHeadBlock.append(enemyHealthBar);
+
+		let fightArena = document.querySelector(".arena");
+		let enemyPosition = this.getEnemyPositionElement();
+		fightArena.append(enemyPosition);
+	}
+
 	destroyEnemy() {
 		//Destroy enemy on death, determine what to pass to game logic and call update Game Logic accordingly
-		this.currentEnemy.image = ""; //Eventually figure out death animation
-		this.updateGameLogic();
+		//Eventually figure out death animation
+		let enemyPosition = document.querySelector(".enemy-pos");
+		enemyPosition.parentNode.removeChild(enemyPosition);
+
+		let enemyHealthBar = document.querySelector(".health-bar");
+		enemyHealthBar.parentNode.removeChild(enemyHealthBar);		
 	}
 
 	updateGameLogic() {
