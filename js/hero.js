@@ -9,7 +9,6 @@ class Hero extends Character {
 		super(name, image);
 		this.atkStr = atkStr;
 		this.atkSpd = atkSpd;
-		// this.heroAtkInterval = setInterval(this.attack, atkSpd * MILLI);
 	}
 
 	createHeroCard() {
@@ -38,10 +37,5 @@ class Hero extends Character {
 		companionCard.append(companionGrid);
 		companionCard.append(companionImg);
 		companionSection.append(companionCard);
-	}
-
-	attack() {
-		//Determine the amount of damage to caused, pass to game play class to pass to enemy
-		// console.log("Attack");
 	}
 }

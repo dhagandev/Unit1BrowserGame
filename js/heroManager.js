@@ -1,6 +1,7 @@
 class HeroManager {
 	playerHero = null;
 	playerInterval = null;
+	companionTypes = null;
 	companionObjects = null;
 	companionIntervals = null;
 	gmObject = null;
@@ -11,11 +12,18 @@ class HeroManager {
 		let heroAtkStr = 1;
 		let heroAtkSpd = 0.5;
 		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
+		
 		this.playerHero.createHeroCard();
 		this.playerInterval = this.attackEnemy(this.playerHero);
+		
+		this.companionTypes = ["Fellow Adventurer"];
 		this.companionIntervals = [];
-		this.companionObjects = [new FellowAdventurer()];
-		this.companionObjects[0].quantity = 2;
+		this.companionObjects = [];
+
+		this.getBuyCompanionCards();
+	}
+
+	setUpCompanions() {
 		this.companionObjects.forEach((ele) => {
 			ele.createCompanionCard();
 			let companionInterval = this.attackEnemy(ele);
@@ -26,10 +34,8 @@ class HeroManager {
 	attackEnemy(attacker) {
 		return setInterval(() => {
 			let atk = attacker.atkStr;
-			console.log("attacker " + atk);
 			if (attacker instanceof Companion) {
 				atk *= attacker.quantity;
-				console.log("attacker " + atk);
 			}
 			this.gmObject.enemyManager.currentEnemy.health -= atk;
 			this.gmObject.statsManager.dmgDealt += atk;
@@ -61,5 +67,56 @@ class HeroManager {
 			allElements.push(companionPosition);
 		}
 		return allElements;
+	}
+
+	getBuyCompanionCards() {
+		let companionSection = document.querySelector(".companions");
+		for (let i = 0; i < this.companionTypes.length; i++) {
+
+			let tempObj = null;
+			switch(this.companionTypes[i]){
+				case "Fellow Adventurer":
+					tempObj = new FellowAdventurer();
+					break;
+				default:
+					break;
+			}
+
+			let buyCard = document.createElement("div");
+			buyCard.classList.add("buy-card");
+
+			let buyName = document.createElement("div");
+			buyName.classList.add("buy-name");
+			buyName.innerHTML = "Buy a " + this.companionTypes[i];
+
+			let buyCost = document.createElement("div");
+			buyCost.classList.add("buy-cost");
+			let totalCost = tempObj.costToBuy * 3;
+			buyCost.innerHTML = totalCost + " gp";
+
+			buyCard.append(buyName);
+			buyCard.append(buyCost);
+
+			buyCard.addEventListener('click', () => {
+				this.createCompanion(tempObj, totalCost);
+			});
+
+			companionSection.append(buyCard);
+
+		}
+	}
+
+	createCompanion(type, cost) {
+		let stats = this.gmObject.statsManager;
+		if (stats.moneyHand - cost >= 0) {
+			stats.moneyHand -= cost;
+			let monHand = document.querySelector(".money-hand");
+			monHand.innerHTML = stats.moneyHand;
+
+			let buyCard = document.querySelector(".buy-card");
+			buyCard.parentNode.removeChild(buyCard);
+			this.companionObjects.push(type);
+			this.setUpCompanions();
+		}
 	}
 }

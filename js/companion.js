@@ -43,11 +43,6 @@ class Companion extends Hero {
 		companionSection.append(companionCard);
 	}
 
-	attack() {
-		// console.log("Huzzah");
-		//Override to be quantity x attack str
-	}
-
 	costToBuy1() {
 		//How can I get money from gameplay > stats tp see if I can afford it
 		let totalPrice = 1 * this.costToBuy;

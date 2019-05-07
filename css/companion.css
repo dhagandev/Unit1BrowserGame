@@ -9,13 +9,16 @@
 	overflow: scroll;
 }
 
-.companion-card {
+.companion-card, .buy-card {
 	background: #fff6c8;
 	margin: 5px 0;
 	border-radius: 20px;
 	border: #443025 solid 2px;
 	min-height: 80px;
 	max-height: 100px;
+}
+
+.companion-card {
 	display: flex;
 }
 
@@ -56,4 +59,17 @@
 	height: 100%;
 	width: 25%;
 	transform: scaleX(-1);
+}
+
+.buy-name {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.buy-cost {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
 }
