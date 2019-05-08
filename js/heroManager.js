@@ -115,8 +115,15 @@ class HeroManager {
 
 			let buyCard = document.querySelector(".buy-card");
 			buyCard.parentNode.removeChild(buyCard);
+			type.gmObject = this.gmObject;
 			this.companionObjects.push(type);
 			this.setUpCompanions();
+
+			let fightArena = document.querySelector(".arena");
+			let companionElements = this.getCompanionDomElements();
+			companionElements.forEach(function(ele) {
+				fightArena.append(ele);
+			})
 		}
 	}
 }
