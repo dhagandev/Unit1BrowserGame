@@ -6,6 +6,8 @@ class GameManager {
 	achievementManager = null;
 	upgradesManager = null;
 
+	clickAtk = 0;
+
 	constructor() {
 		this.resetGame = false;
 		this.enemyManager = new EnemyManager(this);
@@ -13,6 +15,7 @@ class GameManager {
 		this.statsManager = new Stats();
 		this.upgradesManager = new Upgrades(this);
 		this.achievementManager = new Achievements();
+		this.clickAtk = 5;
 	}
 
 	render() {
@@ -28,6 +31,16 @@ class GameManager {
 		let fightBlock = document.querySelector(".fight");
 		let fightArena = document.createElement("div");
 		fightArena.classList.add("arena");
+
+		//HERE
+
+		fightArena.addEventListener('click', () => {
+			let enemy = this.enemyManager.currentEnemy;
+			this.genDmgBox(this.clickAtk, "clicker");
+			this.enemyManager.currentEnemy.health -= this.clickAtk;
+			this.statsManager.dmgDealt += this.clickAtk;
+			this.enemyManager.enemyCheck();
+		});
 		
 		let heroPosition = this.heroManager.getHeroDomElement();
 		fightArena.append(heroPosition);
