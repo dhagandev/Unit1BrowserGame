@@ -14,14 +14,13 @@
 }
 
 .title {
-	margin: 3px 0 0 3px;
-	width: 74%;
+	margin: 5px 0 0 5px;
+	width: 25%;
 	float: left;
 }
 
 .money-hand {
-	margin: 3px 3px 0 0;
-	width: 24%;
+	margin: 5px 5px 0 0;
 	float: right;
 	text-align: right;
 }
@@ -49,8 +48,21 @@
 
 .health-bar {
 	background: #479a6d;
-	height: 20px;
+	height: 25px;
 	width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.health-bar:before {
+	position: absolute;
+	content: attr(data-label);
+	font-size: 18px;
+	color: white;
+	letter-spacing: 5px;
+	top: 5px;
+	left: 0;
+	right: 0;
 }
 
 .dmg-box {

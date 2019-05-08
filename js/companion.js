@@ -52,15 +52,26 @@ class Companion extends Hero {
 		let gridSave = grid;
 		let gridParent = grid.parentNode;
 		gridParent.removeChild(grid);
-
 		//create buttons that call cost to buy functions and display how much it will cost
 		let buyGrid = document.createElement("div");
 		buyGrid.classList.add("buy-grid");
 
+		let companionImg = gridParent.firstChild;
+		companionImg.addEventListener('click', function() {
+			if (buyGrid.parentNode === gridParent) {
+				gridParent.removeChild(buyGrid);
+				gridParent.insertBefore(gridSave, gridParent.firstChild);
+			}
+		});
+
+		let statsMan = this.gmObject.statsManager;
+		let max = Math.floor(statsMan.moneyHand / this.costToBuy);
+		let totalPrice = max * this.costToBuy;
+
 		let buy1Button = document.createElement("div");
 		buy1Button.classList.add("buy1");
 		buy1Button.classList.add("btn");
-		buy1Button.innerHTML = "Buy 1";
+		buy1Button.innerHTML = "+1 = " + (1 * this.costToBuy);
 		buy1Button.addEventListener('click', () => {
 			this.costToBuy1(gridSave, buyGrid);
 		});
@@ -69,7 +80,7 @@ class Companion extends Hero {
 		let buy10Button = document.createElement("div");
 		buy10Button.classList.add("buy10");
 		buy10Button.classList.add("btn");
-		buy10Button.innerHTML = "Buy 10";
+		buy10Button.innerHTML = "+10 = " + (10 * this.costToBuy);
 		buy10Button.addEventListener('click', () => {
 			this.costToBuy10(gridSave, buyGrid);
 		});
@@ -78,16 +89,22 @@ class Companion extends Hero {
 		let buy100Button = document.createElement("div");
 		buy100Button.classList.add("buy100");
 		buy100Button.classList.add("btn");
-		buy100Button.innerHTML = "Buy 100";
+		buy100Button.innerHTML = "+100 = " + (100 * this.costToBuy);
 		buy100Button.addEventListener('click', () => {
 			this.costToBuy100(gridSave, buyGrid);
 		});
 		buyGrid.append(buy100Button);
 
+		// let statsMan = this.gmObject.statsManager;
+		// let max = Math.floor(statsMan.moneyHand / this.costToBuy);
+		// let totalPrice = max * this.costToBuy;
+		// let buyMaxButton = document.querySelector(".buy-max");
+		// buyMaxButton.innerHTML = "+" + max + "=" + totalPrice;
+
 		let buyMaxButton = document.createElement("div");
 		buyMaxButton.classList.add("buy-max");
 		buyMaxButton.classList.add("btn");
-		buyMaxButton.innerHTML = "Buy Max";
+		buyMaxButton.innerHTML = "+" + max + " = " + totalPrice;
 		buyMaxButton.addEventListener('click', () => {
 			this.costToBuyMax(gridSave, buyGrid);
 		});

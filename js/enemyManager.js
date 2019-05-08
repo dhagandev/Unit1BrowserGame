@@ -97,6 +97,7 @@ class EnemyManager {
 		enemyHealthBar.classList.add("health-bar");
 		enemyHealthBar.setAttribute("max", this.currentEnemy.health);
 		enemyHealthBar.setAttribute("value", this.currentEnemy.health);
+		enemyHealthBar.setAttribute("data-label", this.currentEnemy.name);
 		return enemyHealthBar;
 	}
 
