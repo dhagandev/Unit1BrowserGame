@@ -52,3 +52,51 @@
 	height: 20px;
 	width: 100%;
 }
+
+.dmg-box {
+	font-size: 38px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.hero {
+	color: red;
+}
+
+.companion {
+	color: blue;
+}
+
+.animated {
+	-webkit-animation-duration: 1s;animation-duration: 1s;
+	-webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+		top: 0;
+	}
+	100% {
+		opacity: 0;
+		top: 50px;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		top: 0;
+	}
+	100% {
+		opacity: 0;
+		top: 50px;
+	}
+}
+
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+}

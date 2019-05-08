@@ -52,9 +52,12 @@ class EnemyManager {
 		let enemyHealthBar = this.getEnemyHealthBar();
 		fightHeadBlock.append(enemyHealthBar);
 
+		let heroPosition = document.querySelector(".hero-pos");
+
 		let fightArena = document.querySelector(".arena");
 		let enemyPosition = this.getEnemyPositionElement();
-		fightArena.append(enemyPosition);
+		fightArena.insertBefore(enemyPosition, heroPosition.nextSibling);
+
 	}
 
 	destroyEnemy() {
@@ -76,7 +79,7 @@ class EnemyManager {
 		stats.moneyEarned += this.currentEnemy.coinsDropped;
 		// let fightHeadBlock = document.querySelector(".heading");
 		let monHand = document.querySelector(".money-hand");
-		monHand.innerHTML = stats.moneyHand + " gp";
+		monHand.innerHTML = stats.moneyHand + "gp";
 		//Should be temp solution to set up game logic. 
 
 	}

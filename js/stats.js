@@ -27,7 +27,7 @@ class Stats {
 
 		let mone = document.createElement("div");
 		mone.classList.add("mone");
-		mone.innerHTML = "Total Earned: " + this.moneyEarned + " gp";
+		mone.innerHTML = "Total Earned: " + this.moneyEarned + "gp";
 		statsArea.insertBefore(mone, dmg.nextSibling);
 
 		let numK = document.createElement("div");

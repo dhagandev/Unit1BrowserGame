@@ -34,9 +34,12 @@ class HeroManager {
 	attackEnemy(attacker) {
 		return setInterval(() => {
 			let atk = attacker.atkStr;
+			let source = "hero";
 			if (attacker instanceof Companion) {
 				atk *= attacker.quantity;
+				source = "companion";
 			}
+			this.gmObject.genDmgBox(atk, source);
 			this.gmObject.enemyManager.currentEnemy.health -= atk;
 			this.gmObject.statsManager.dmgDealt += atk;
 			this.gmObject.enemyManager.enemyCheck();
@@ -92,7 +95,7 @@ class HeroManager {
 			let buyCost = document.createElement("div");
 			buyCost.classList.add("buy-cost");
 			let totalCost = tempObj.costToBuy * 3;
-			buyCost.innerHTML = totalCost + " gp";
+			buyCost.innerHTML = totalCost + "gp";
 
 			buyCard.append(buyName);
 			buyCard.append(buyCost);
@@ -111,7 +114,7 @@ class HeroManager {
 		if (stats.moneyHand - cost >= 0) {
 			stats.moneyHand -= cost;
 			let monHand = document.querySelector(".money-hand");
-			monHand.innerHTML = stats.moneyHand;
+			monHand.innerHTML = stats.moneyHand + "gp";
 
 			let buyCard = document.querySelector(".buy-card");
 			buyCard.parentNode.removeChild(buyCard);
@@ -119,10 +122,11 @@ class HeroManager {
 			this.companionObjects.push(type);
 			this.setUpCompanions();
 
+			let heroPosition = document.querySelector(".hero-pos");
 			let fightArena = document.querySelector(".arena");
 			let companionElements = this.getCompanionDomElements();
 			companionElements.forEach(function(ele) {
-				fightArena.append(ele);
+				fightArena.insertBefore(ele, heroPosition.nextSibling);
 			})
 		}
 	}

@@ -104,7 +104,7 @@ class Companion extends Hero {
 			this.quantity += 1;
 			statsMan.moneyHand -= totalPrice;
 			let monHand = document.querySelector(".money-hand");
-			monHand.innerHTML = statsMan.moneyHand;
+			monHand.innerHTML = statsMan.moneyHand + "gp";
 
 			let parent = buyGrid.parentNode;
 			parent.removeChild(buyGrid);
@@ -115,12 +115,6 @@ class Companion extends Hero {
 
 			quanDiv.innerHTML = this.quantity;
 			dmgDiv.innerHTML = (this.atkStr * this.quantity) + "dmg/" + this.atkSpd + "sec";
-
-			// let companionQuantity = document.querySelector(".companion-quantity");
-			// companionQuantity.innerHTML = this.quantity;
-			// let companionDmg = document.querySelector(".companion-damage");
-			// let newDmg = this.atkStr * this.quantity;
-			// companionDmg.innerHTML = newDmg + "dmg/" + this.atkSpd + "sec";
 		}
 	}
 
@@ -131,7 +125,7 @@ class Companion extends Hero {
 			this.quantity += 10;
 			statsMan.moneyHand -= totalPrice;
 			let monHand = document.querySelector(".money-hand");
-			monHand.innerHTML = statsMan.moneyHand;
+			monHand.innerHTML = statsMan.moneyHand + "gp";
 
 			let parent = buyGrid.parentNode;
 			parent.removeChild(buyGrid);
@@ -152,7 +146,7 @@ class Companion extends Hero {
 			this.quantity += 100;
 			statsMan.moneyHand -= totalPrice;
 			let monHand = document.querySelector(".money-hand");
-			monHand.innerHTML = statsMan.moneyHand;
+			monHand.innerHTML = statsMan.moneyHand  + "gp";
 
 			let parent = buyGrid.parentNode;
 			parent.removeChild(buyGrid);
@@ -179,7 +173,7 @@ class Companion extends Hero {
 			this.quantity += max;
 			statsMan.moneyHand -= totalPrice;
 			let monHand = document.querySelector(".money-hand");
-			monHand.innerHTML = statsMan.moneyHand;
+			monHand.innerHTML = statsMan.moneyHand + "gp";
 
 			let parent = buyGrid.parentNode;
 			parent.removeChild(buyGrid);

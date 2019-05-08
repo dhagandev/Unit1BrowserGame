@@ -19,7 +19,7 @@ class GameManager {
 		let fightHeadBlock = document.querySelector(".heading");
 		let monHand = document.createElement("div");
 		monHand.classList.add("money-hand");
-		monHand.innerHTML = this.statsManager.moneyHand + " gp";
+		monHand.innerHTML = this.statsManager.moneyHand + "gp";
 		fightHeadBlock.append(monHand);
 
 		let enemyHealthBar = this.enemyManager.getEnemyHealthBar();
@@ -29,18 +29,34 @@ class GameManager {
 		let fightArena = document.createElement("div");
 		fightArena.classList.add("arena");
 		
-		let enemyPosition = this.enemyManager.getEnemyPositionElement();
-		fightArena.append(enemyPosition);
-
-		let companionElements = this.heroManager.getCompanionDomElements();
-		companionElements.forEach(function(ele) {
-			fightArena.append(ele);
-		})
-
 		let heroPosition = this.heroManager.getHeroDomElement();
 		fightArena.append(heroPosition);
 
+		let enemyPosition = this.enemyManager.getEnemyPositionElement();
+		fightArena.insertBefore(enemyPosition, heroPosition.nextSibling);
+
+		let companionElements = this.heroManager.getCompanionDomElements();
+		companionElements.forEach(function(ele) {
+			fightArena.insertBefore(ele, enemyPosition.nextSibling);
+		})
+
+
 		fightBlock.append(fightArena);
+	}
+
+	genDmgBox(damage, source) {
+		let fightArena = document.querySelector(".arena");
+		let dmgBox = document.createElement("div");
+		dmgBox.classList.add("dmg-box");
+		dmgBox.classList.add(source);
+		dmgBox.classList.add("animated");
+		dmgBox.classList.add("fadeOut");
+		dmgBox.innerHTML = "-" + damage;
+		dmgBox.addEventListener('animationend', () => {
+			dmgBox.parentNode.removeChild(dmgBox);
+		})
+
+		fightArena.append(dmgBox);
 	}
 }
 
