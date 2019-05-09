@@ -7,7 +7,6 @@ class Upgrades {
 		//That will lead to how to modify elements
 		this.gmObject = gm;
 		this.allUpgrades = JSON.parse(upgradeList).upgrades;
-		this.createUpgradeCard();
 	}
 
 	createUpgradeCard() {
@@ -131,10 +130,20 @@ class Upgrades {
 					}
 				}
 
+				console.log("try to remove button?");
+				console.log(upgradeCard);
+				let upgradeBuyBtn = upgradeCard.lastChild;
+				upgradeBuyBtn.parentNode.removeChild(upgradeBuyBtn);
+
 				let upParent = upgradeCard.parentNode;
 				upParent.removeChild(upgradeCard);
-				if (!upParent.hasChildNodes()) {
-					upParent.parentNode.removeChild(upParent);
+				if (!upParent.hasChildNodes() && document.body.clientWidth < 768) {
+					if (document.body.clientWidth < 768) {
+						upParent.parentNode.removeChild(upParent);
+					}
+					else {
+						
+					}
 				}
 				let statsArea = document.querySelector(".stat-area");
 				statsArea.insertBefore(upgradeCard, statsArea.lastChild.nextSibling);

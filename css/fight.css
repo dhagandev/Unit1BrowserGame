@@ -1,5 +1,5 @@
 .fight {
-	height: 30%;
+	height: 150px; /*275 max*/
 	background-image: url(https://img.itch.zone/aW1hZ2UvMTMzODM2LzYxMzkwOS5wbmc=/347x500/To5NoT.png);
 	background-position: bottom center;
 	background-size: height;
@@ -14,8 +14,9 @@
 }
 
 .title {
+	text-align: left;
 	margin: 5px 0 0 5px;
-	width: 25%;
+	width: 50%;
 	float: left;
 }
 
@@ -27,23 +28,21 @@
 
 .arena {
 	max-height:150px;
-	height: 80%;
+	height: 100%;
 	width: 100%;
-	position: relative;
+	position: absolute;
 }
 
 .enemy-pos {
-	transform: scale(2.5, 2.5) translateY(5px);
-	float: right;
-	margin: 12% 20% 0 0;
+	transform: scale(2.5, 2.5) translate(28px, 28px);
 }
 
 .hero-pos {
-	transform: scale(2.25, 2.25) translate(40px, 30px);
+	transform: scale(2.25, 2.25) translate(-20px, 32px);
 }
 
 .companion-pos {
-	transform: scale(2.25, 2.25) translate(30px, 40px);
+	transform: scale(2.25, 2.25) translate(10px, 40px);
 }
 
 .health-bar {
@@ -66,7 +65,7 @@
 }
 
 .dmg-box {
-	font-size: 38px;
+	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
@@ -115,4 +114,52 @@
 .fadeOut {
 	-webkit-animation-name: fadeOut;
 	animation-name: fadeOut;
+}
+
+@media only screen and (min-width: 768px) {
+	.fight {
+		height: 275px;
+	}
+
+	.arena {
+		max-height: 275px;
+	}
+
+	.hero-pos {
+		transform: scale(4, 4) translate(-25px, 42px);
+	}
+
+	.enemy-pos {
+		transform: scale(4, 4) translate(28px, 40px);
+	}
+
+	.companion-pos {
+		transform: scale(4, 4) translate(-65px, 50px);
+	}
+
+	.dmg-box {
+		font-size: 50px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.fight {
+		height: 275px;
+	}
+
+	.arena {
+		max-height: 275px;
+	}
+
+	.enemy-pos {
+		transform: scale(4, 4) translate(28px, 40px);
+	}
+
+	.companion-pos {
+		transform: scale(4, 4) translate(-70px, 50px);
+	}
+
+	.dmg-box {
+		font-size: 52px;
+	}
 }

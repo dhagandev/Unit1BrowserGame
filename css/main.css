@@ -1,8 +1,64 @@
-body {
+html, body {
 	margin: 0;
 	background: #282830;
+	height: 100%;
 }
 
 .game-info {
-	height: 100vh;
+	text-align: center;
+	height: 100%;
+}
+
+.companions, .upgrades {
+	background: #c98139;
+	border: #b07030 solid 5px;
+	margin: 3px 10px;
+	min-height: 150px;
+	max-height: 175px;
+	overflow: scroll;
+}
+
+.stats {
+	background: #c98139;
+	border: #b07030 solid 5px;
+	margin: 3px 10px;
+	min-height: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+	.companions, .upgrades {
+		margin: 10px 5px;
+		display: inline-block;
+		min-height: 0;
+		max-height: none;
+		height: 350px;
+		width: 47%;
+	}
+
+	.stats {
+		margin: 10px;
+		max-height: none;
+		min-height: 0;
+		height: 50%
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+	.wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: stretch;
+		height: calc(100% - 380px);
+	}
+
+	.companions, .upgrades, .stats {
+		max-height: none;
+		min-height: 0;
+		height: 95%;
+		flex: flex-grow;
+		width: 31%;
+		overflow: auto;
+	}
 }

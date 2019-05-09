@@ -13,7 +13,7 @@ class Stats {
 		this.numKilled = 0;
 		this.upgradesBought = [];
 		this.achievementsEarned = [];
-		this.constructStats();
+		// this.constructStats();
 	}
 
 	constructStats() {
@@ -39,22 +39,27 @@ class Stats {
 		setUpUpgradeStats.classList.add("upgrade-stats");
 		setUpUpgradeStats.innerHTML = "Your Upgrades";
 		statsArea.insertBefore(setUpUpgradeStats, numK.nextSibling);
-		// let upgradeArea = document.createElement("div");
-		// upgradeArea.classList.add("upgrade-stats");
-		// statsArea.append(upgradeArea)
 	}
 
 	deconstructStats() {
 		let dmg = document.querySelector(".dmg");
-		dmg.parentNode.removeChild(dmg);
+		if (dmg !== null) {
+			dmg.parentNode.removeChild(dmg);
+		}
 
 		let mone = document.querySelector(".mone");
-		mone.parentNode.removeChild(mone);
+		if (mone !== null) {
+			mone.parentNode.removeChild(mone);
+		}
 		
 		let numK = document.querySelector(".numK");
-		numK.parentNode.removeChild(numK);
-
+		if (numK !== null) {
+			numK.parentNode.removeChild(numK);
+		}
+	
 		let setUpUpgradeStats = document.querySelector(".upgrade-stats");
-		setUpUpgradeStats.parentNode.removeChild(setUpUpgradeStats);
+		if (setUpUpgradeStats !== null) {
+			setUpUpgradeStats.parentNode.removeChild(setUpUpgradeStats);
+		}
 	}
 }

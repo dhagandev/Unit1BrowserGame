@@ -12,6 +12,8 @@ class Hero extends Character {
 	}
 
 	createHeroCard() {
+		console.log("hero card");
+		console.log(document.querySelector(".game-info"));
 		let companionSection = document.querySelector(".companions");
 		let companionCard = document.createElement("div");
 		companionCard.classList.add("companion-card");
@@ -36,6 +38,7 @@ class Hero extends Character {
 		companionGrid.append(companionDamage);
 		companionCard.append(companionGrid);
 		companionCard.append(companionImg);
+
 		companionSection.append(companionCard);
 	}
 }

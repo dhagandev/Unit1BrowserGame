@@ -77,7 +77,6 @@ class EnemyManager {
 		stats.numKilled++;
 		stats.moneyHand += this.currentEnemy.coinsDropped;
 		stats.moneyEarned += this.currentEnemy.coinsDropped;
-		// let fightHeadBlock = document.querySelector(".heading");
 		let monHand = document.querySelector(".money-hand");
 		monHand.innerHTML = stats.moneyHand + "gp";
 		//Should be temp solution to set up game logic. 
