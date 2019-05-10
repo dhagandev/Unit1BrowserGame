@@ -46,6 +46,7 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 (Add image here)
 
 ### Screenshots
+(Add image here)
 
 ### Pseudo-Code Ideas
 #### Potential Inherited Class Structures
@@ -121,7 +122,7 @@ This is not quite related to writing the code for this program, but my biggest t
 * Add in additional companions
 * Add in additional enemies
 * Improve styling: New font, no basic colors, etc
-* Max button report updating with monetary gains
+* Max button report updating with monetary gains/loss
 * Audio
 * Animations
 * Imagery on empty upgrade blocks
