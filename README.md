@@ -32,7 +32,7 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 * Hover effects
 * ~~Scrolling~~
 
-### Strecth Goals
+### Stretch Goals
 * ~~Players input their name, hero is then named the inputted value~~
 * Animations
 * Audio
