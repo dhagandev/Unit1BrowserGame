@@ -1,3 +1,5 @@
+//Designed to easily add new upgrades
+
 let upgradeList = `{
 	"upgrades": [
 		{

@@ -26,6 +26,7 @@ class EnemyManager {
 		return spawn;
 	}
 
+	//Determine if the enemy has died and any consequences of having attacked the enemy
 	enemyCheck() {
 		let healthBar = document.querySelector(".health-bar");
 		healthBar.setAttribute("value", this.currentEnemy.health);
@@ -66,8 +67,6 @@ class EnemyManager {
 	}
 
 	destroyEnemy() {
-		//Destroy enemy on death, determine what to pass to game logic and call update Game Logic accordingly
-		//Eventually figure out death animation
 		let enemyPosition = document.querySelector(".enemy-pos");
 		enemyPosition.parentNode.removeChild(enemyPosition);
 
@@ -77,17 +76,16 @@ class EnemyManager {
 	}
 
 	updateGameLogic() {
-		//Figure out how to and what is best practice for passing up variable changes to stats through game class. I assume it will be getter/setters but other classes need to be flushed out more.
 		let stats = this.gmObject.statsManager;
 		stats.numKilled++;
 		stats.moneyHand += this.currentEnemy.coinsDropped;
 		stats.moneyEarned += this.currentEnemy.coinsDropped;
 		let monHand = document.querySelector(".money-hand");
 		monHand.innerHTML = stats.moneyHand + "gp";
-		//Should be temp solution to set up game logic. 
 
 	}
 
+	//Creates the enemy position for the fight arena
 	getEnemyPositionElement() {
 		let enemyPosition = document.createElement("img");
 		enemyPosition.classList.add("enemy-pos");
@@ -98,6 +96,7 @@ class EnemyManager {
 		return enemyPosition;
 	}
 
+	//Update enemy health bar information
 	getEnemyHealthBar() {
 		let enemyHealthBar = document.createElement("progress");
 		enemyHealthBar.classList.add("health-bar");

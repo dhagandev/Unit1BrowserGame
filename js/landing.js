@@ -1,6 +1,7 @@
 class Landing {
 	gmObj = null;
 
+	//Create the title screen
 	titleScreen() {
 		let ginfo = document.querySelector(".game-info");
 		let titleScreen = document.createElement("div");
@@ -65,10 +66,13 @@ class Landing {
 
 	}
 
+	//Remove the title screen when buttons are clicked
 	destroyTitleScreen() {
 		let titleScreen = document.querySelector(".titleScreen");
 		titleScreen.parentNode.removeChild(titleScreen);
 	}
+
+	/* Next few functions are explaining the different sections in the code */
 
 	explainCompanion() {
 		let companions = document.querySelector(".companions");
@@ -131,6 +135,7 @@ class Landing {
 		fight.append(fightWrap);
 	}
 
+	//Return to title screen from info screen
 	howToBackBtn() {
 		let head = document.querySelector(".heading");
 		let backBtn = document.createElement("div");
@@ -143,6 +148,7 @@ class Landing {
 		head.insertBefore(backBtn, head.firstChild);
 	}
 
+	//Remove the explains to return to the page
 	destroyAllExplain() {
 		let heading = document.querySelector(".heading");
 		let fight = document.querySelector(".fight");

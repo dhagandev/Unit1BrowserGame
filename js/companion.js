@@ -10,6 +10,7 @@ class Companion extends Hero {
 		this.costToBuy = costToBuy;
 	}
 
+	//Creates the DOM element for companion cards, including the event clicker to switch between the info screen and buy screen
 	createCompanionCard() {
 		let companionSection = document.querySelector(".companions");
 		let companionCard = document.createElement("div");
@@ -48,11 +49,11 @@ class Companion extends Hero {
 		companionSection.append(companionCard);
 	}
 
+	//Creates the buy screen section where the user can buy more companions; also sets up the companion image to return to the info screen.
 	buyScreen(grid) {
 		let gridSave = grid;
 		let gridParent = grid.parentNode;
 		gridParent.removeChild(grid);
-		//create buttons that call cost to buy functions and display how much it will cost
 		let buyGrid = document.createElement("div");
 		buyGrid.classList.add("buy-grid");
 
@@ -95,12 +96,6 @@ class Companion extends Hero {
 		});
 		buyGrid.append(buy100Button);
 
-		// let statsMan = this.gmObject.statsManager;
-		// let max = Math.floor(statsMan.moneyHand / this.costToBuy);
-		// let totalPrice = max * this.costToBuy;
-		// let buyMaxButton = document.querySelector(".buy-max");
-		// buyMaxButton.innerHTML = "+" + max + "=" + totalPrice;
-
 		let buyMaxButton = document.createElement("div");
 		buyMaxButton.classList.add("buy-max");
 		buyMaxButton.classList.add("b-btn");
@@ -113,6 +108,8 @@ class Companion extends Hero {
 		gridParent.append(buyGrid);
 
 	}
+
+	/* Next few functions are how to buy multiple companions. All except max could be consolidated to one function at a later point.*/
 
 	costToBuy1(gridSave, buyGrid) {
 		let totalPrice = 1 * this.costToBuy;
@@ -182,6 +179,7 @@ class Companion extends Hero {
 		}
 	}
 
+	//Has to calculate the most companions you can afford and how much that would cost before creating the button and reporting that information
 	costToBuyMax(gridSave, buyGrid) {
 		let statsMan = this.gmObject.statsManager;
 		let max = Math.floor(statsMan.moneyHand / this.costToBuy);

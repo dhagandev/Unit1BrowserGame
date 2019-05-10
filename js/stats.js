@@ -13,9 +13,9 @@ class Stats {
 		this.numKilled = 0;
 		this.upgradesBought = [];
 		this.achievementsEarned = [];
-		// this.constructStats();
 	}
 
+	//Used to recreate the stats after the stats have been removed
 	constructStats() {
 		let pstats = document.querySelector(".player-stats");
 
@@ -41,6 +41,7 @@ class Stats {
 		statsArea.insertBefore(setUpUpgradeStats, numK.nextSibling);
 	}
 
+	//Used to re-render the stats block after each attack
 	deconstructStats() {
 		let dmg = document.querySelector(".dmg");
 		if (dmg !== null) {

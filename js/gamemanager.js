@@ -18,6 +18,8 @@ class GameManager {
 		this.clickAtk = 5;
 	}
 
+	/* Set up basic sectional elements on the page */
+
 	setUpCompElem(){
 		console.log("create comp");
 		let ginfo = document.querySelector(".game-info");
@@ -118,7 +120,6 @@ class GameManager {
 		fightArena.append(heroPosition);
 
 		let enemyPosition = this.enemyManager.getEnemyPositionElement();
-		// fightArena.append(enemyPosition); //testing enemy spawning
 		fightArena.insertBefore(enemyPosition, heroPosition.nextSibling);
 
 		let companionElements = this.heroManager.getCompanionDomElements();
@@ -133,6 +134,7 @@ class GameManager {
 		fightHeadBlock.append(enemyHealthBar);	
 	}
 
+	//Choose order in which to render everything based on window size
 	render() {
 		if (document.body.clientWidth < 768) {
 			this.setUpHeader();
@@ -180,6 +182,7 @@ class GameManager {
 
 	}
 
+	//Creates a damage box to give feedback on damage being done to an enemy
 	genDmgBox(damage, source) {
 		let fightArena = document.querySelector(".arena");
 		let dmgBox = document.createElement("div");
@@ -195,6 +198,7 @@ class GameManager {
 		fightArena.append(dmgBox);
 	}
 
+	//Plays the game
 	play() {
 		this.enemyManager.currentEnemy = this.enemyManager.randomSpawn();
 		this.setUpArena();
@@ -214,7 +218,3 @@ let gm = new GameManager();
 land.gmObj = gm;
 
 land.titleScreen();
-
-// gm.render();
-
-// gm.play();

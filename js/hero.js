@@ -11,6 +11,7 @@ class Hero extends Character {
 		this.atkSpd = atkSpd;
 	}
 
+	//Creates the hero DOM element, this is different than the companion DOM element
 	createHeroCard() {
 		let companionSection = document.querySelector(".companions");
 		let companionCard = document.createElement("div");

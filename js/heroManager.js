@@ -25,6 +25,7 @@ class HeroManager {
 		});
 	}
 
+	//Creates the intervals at which the hero/companion will do damage to the enemy
 	attackEnemy(attacker) {
 		return setInterval(() => {
 			let atk = attacker.atkStr;
@@ -66,6 +67,7 @@ class HeroManager {
 		return allElements;
 	}
 
+	//Create the buy companion cards - user must buy the companion before the companion is a part of their party
 	getBuyCompanionCards() {
 		let companionSection = document.querySelector(".companions");
 		for (let i = 0; i < this.companionTypes.length; i++) {
@@ -103,6 +105,7 @@ class HeroManager {
 		}
 	}
 
+	//Removes the buy card and creates the companion card
 	createCompanion(type, cost) {
 		let stats = this.gmObject.statsManager;
 		if (stats.moneyHand - cost >= 0) {

@@ -3,12 +3,11 @@ class Upgrades {
 	gmObject = null;
 
 	constructor(gm) {
-		//Determine the best way to store the upgrades
-		//That will lead to how to modify elements
 		this.gmObject = gm;
 		this.allUpgrades = JSON.parse(upgradeList).upgrades;
 	}
 
+	//Creates the DOM element for each upgrade card and adds it to the .upgrades element
 	createUpgradeCard() {
 		let upgradesSection = document.querySelector(".upgrades");
 		for (let i = 0; i < this.allUpgrades.length; i++) {
@@ -44,6 +43,7 @@ class Upgrades {
 		}
 	}
 
+	//Apply the upgrade to the affected character. Should be broken down into helper functions at some point.
 	applyUpgrade(upgrade) {
 		let stats = this.gmObject.statsManager;
 		if (stats.moneyHand - upgrade.cost >= 0 && !upgrade.bought) {
@@ -130,8 +130,6 @@ class Upgrades {
 					}
 				}
 
-				console.log("try to remove button?");
-				console.log(upgradeCard);
 				let upgradeBuyBtn = upgradeCard.lastChild;
 				upgradeBuyBtn.parentNode.removeChild(upgradeBuyBtn);
 
