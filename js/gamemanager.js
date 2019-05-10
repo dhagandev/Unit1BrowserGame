@@ -214,4 +214,11 @@ class GameManager {
 
 let gm = new GameManager();
 gm.render();
+
+let land = new Landing();
+land.explainCompanion();
+land.explainUpgrade();
+land.explainStats();
+land.explainFight();
+
 // gm.play();

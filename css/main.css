@@ -25,6 +25,30 @@ html, body {
 	min-height: 10em;
 }
 
+.explain p {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.explain {
+	font-size: 18px;
+	margin: 10px;
+	overflow: auto;
+}
+
+.fight-wrap {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.fight-explain {
+	background: #c98139;
+	border: #b07030 solid 5px;
+	padding: 10px;
+	max-height: 4.5em;
+}
+
 @media only screen and (min-width: 768px) {
 	.companions, .upgrades {
 		margin: 10px 5px;
@@ -39,7 +63,19 @@ html, body {
 		margin: 10px;
 		max-height: none;
 		min-height: 16em;
-		/*height: 50%*/
+	}
+
+
+	.fight-explain {
+		max-height: 7em;
+	}
+
+	.explain p {
+		font-size: 30px;
+	}
+
+	.explain {
+		font-size: 26px;
 	}
 
 }
@@ -60,5 +96,13 @@ html, body {
 		flex: flex-grow;
 		width: 31%;
 		overflow: auto;
+	}
+
+	.explain p {
+		font-size: 36px;
+	}
+
+	.explain {
+		font-size: 28px;
 	}
 }
