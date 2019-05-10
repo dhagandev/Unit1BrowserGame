@@ -72,6 +72,18 @@
 }
 
 @media only screen and (min-width: 768px) {
+	.bigTitle {
+		margin-bottom: 3em;
+	}
+
+	.btn {
+		font-size: 48px;
+	}
+
+	.input-bar {
+		font-size: 24px;
+	}
+
 	.fight-explain {
 		max-height: 7em;
 	}

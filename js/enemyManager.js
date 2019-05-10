@@ -52,11 +52,17 @@ class EnemyManager {
 		fightHeadBlock.append(enemyHealthBar);
 
 		let heroPosition = document.querySelector(".hero-pos");
+		let companionPosition = document.querySelector(".companion-pos");
 
 		let fightArena = document.querySelector(".arena");
 		let enemyPosition = this.getEnemyPositionElement();
-		fightArena.insertBefore(enemyPosition, heroPosition.nextSibling);
 
+		if (companionPosition !== null) {
+			fightArena.insertBefore(enemyPosition, companionPosition.nextSibling);
+		}
+		else {
+			fightArena.insertBefore(enemyPosition, heroPosition.nextSibling);
+		}
 	}
 
 	destroyEnemy() {

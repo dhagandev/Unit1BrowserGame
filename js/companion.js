@@ -70,7 +70,7 @@ class Companion extends Hero {
 
 		let buy1Button = document.createElement("div");
 		buy1Button.classList.add("buy1");
-		buy1Button.classList.add("btn");
+		buy1Button.classList.add("b-btn");
 		buy1Button.innerHTML = "+1 = " + (1 * this.costToBuy);
 		buy1Button.addEventListener('click', () => {
 			this.costToBuy1(gridSave, buyGrid);
@@ -79,7 +79,7 @@ class Companion extends Hero {
 
 		let buy10Button = document.createElement("div");
 		buy10Button.classList.add("buy10");
-		buy10Button.classList.add("btn");
+		buy10Button.classList.add("b-btn");
 		buy10Button.innerHTML = "+10 = " + (10 * this.costToBuy);
 		buy10Button.addEventListener('click', () => {
 			this.costToBuy10(gridSave, buyGrid);
@@ -88,7 +88,7 @@ class Companion extends Hero {
 
 		let buy100Button = document.createElement("div");
 		buy100Button.classList.add("buy100");
-		buy100Button.classList.add("btn");
+		buy100Button.classList.add("b-btn");
 		buy100Button.innerHTML = "+100 = " + (100 * this.costToBuy);
 		buy100Button.addEventListener('click', () => {
 			this.costToBuy100(gridSave, buyGrid);
@@ -103,7 +103,7 @@ class Companion extends Hero {
 
 		let buyMaxButton = document.createElement("div");
 		buyMaxButton.classList.add("buy-max");
-		buyMaxButton.classList.add("btn");
+		buyMaxButton.classList.add("b-btn");
 		buyMaxButton.innerHTML = "+" + max + " = " + totalPrice;
 		buyMaxButton.addEventListener('click', () => {
 			this.costToBuyMax(gridSave, buyGrid);

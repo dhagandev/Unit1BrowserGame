@@ -38,11 +38,11 @@
 }
 
 .hero-pos {
-	transform: scale(2.25, 2.25) translate(-20px, 32px);
+	transform: scale(2.25, 2.25) translate(-10px, 32px);
 }
 
 .companion-pos {
-	transform: scale(2.25, 2.25) translate(10px, 40px);
+	transform: scale(2.25, 2.25) translate(-40px, 40px);
 }
 
 .health-bar {
