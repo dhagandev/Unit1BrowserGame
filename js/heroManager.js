@@ -15,7 +15,6 @@ class HeroManager {
 		this.companionTypes = ["Fellow Adventurer"];
 		this.companionIntervals = [];
 		this.companionObjects = [];
-		console.log(this);
 	}
 
 	setUpCompanions() {

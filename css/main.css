@@ -2,6 +2,7 @@ html, body {
 	margin: 0;
 	background: #282830;
 	height: 100%;
+	width: 100%;
 }
 
 .game-info {

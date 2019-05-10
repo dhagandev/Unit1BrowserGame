@@ -212,13 +212,12 @@ class GameManager {
 	}
 }
 
-let gm = new GameManager();
-gm.render();
-
 let land = new Landing();
-land.explainCompanion();
-land.explainUpgrade();
-land.explainStats();
-land.explainFight();
+let gm = new GameManager();
+land.gmObj = gm;
+
+land.titleScreen();
+
+// gm.render();
 
 // gm.play();

@@ -1,0 +1,97 @@
+.titleScreen {
+	position: absolute;
+	background: #c98139;
+	border: #b07030 solid 20px;
+	border-radius: 20px;
+	width: 80%;
+	height: 80%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	vertical-align: middle;
+}
+
+.backBtn {
+	background: #c98139;
+	border: #b07030 solid 5px;
+	border-radius: 20px;
+	position: relative;
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.bigTitle {
+	margin: 1em 0;
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.input-bar {
+	margin-top: 3em;
+	margin-bottom: -1em;
+	text-align: center;
+	height: 5%;
+	width: 70%;
+	border-radius: 20px;
+}
+
+.btn {
+	position: relative;
+	background: #b07030;
+	width: 60%;
+	height: 7%;
+	margin: 1.25em auto;
+	font-size: 34px;
+}
+
+.explain p {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.explain {
+	font-size: 18px;
+	margin: 10px;
+	overflow: auto;
+}
+
+.fight-wrap {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.fight-explain {
+	background: #c98139;
+	border: #b07030 solid 5px;
+	padding: 10px;
+	max-height: 4.5em;
+}
+
+@media only screen and (min-width: 768px) {
+	.fight-explain {
+		max-height: 7em;
+	}
+
+	.explain p {
+		font-size: 30px;
+	}
+
+	.explain {
+		font-size: 26px;
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+	.explain p {
+		font-size: 36px;
+	}
+
+	.explain {
+		font-size: 28px;
+	}
+}
