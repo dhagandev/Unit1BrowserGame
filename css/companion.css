@@ -7,6 +7,10 @@
 	max-height: 100px;
 }
 
+.buy-card {
+	line-height: 37px;
+}
+
 .companion-card {
 	display: flex;
 }
@@ -123,6 +127,16 @@
 }
 
 @media only screen and (min-width: 1024px) {
+	.companion-card, .buy-card {
+		max-height: 125px;
+	}
+
+	.companion-img {
+		height: 100%;
+		width: 25%;
+		transform: scaleX(-1) translateY(-15px);
+	}
+
 	.btn {
 		font-size: 1.5vw;
 	}
@@ -132,10 +146,18 @@
 	}
 
 	.companion-damage {
-		font-size: 2vw;
+		font-size: 1.75vw;
 	}
 
 	.companion-quantity {
 		font-size: 2vw;
+	}
+
+	.buy-name {
+		font-size: 36px;
+	}
+
+	.buy-cost {
+		font-size: 32px;
 	}
 }

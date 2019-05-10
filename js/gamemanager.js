@@ -139,12 +139,9 @@ class GameManager {
 			this.setUpHeader();
 			this.setUpEnemyHealth();
 			this.setUpFight();
-			this.setUpArena();
-			this.setUpFighters();
 			this.setUpCompElem();
 			this.setUpUpElem();
 			this.setUpStatElem();
-			this.setUpStats();
 		}
 		else if (document.body.clientWidth < 1024) {
 			console.log("Doc less than 1024");
@@ -153,10 +150,7 @@ class GameManager {
 			this.setUpCompElem();
 			this.setUpUpElem();
 			this.setUpFight();
-			this.setUpArena();
-			this.setUpFighters();
 			this.setUpStatElem();
-			this.setUpStats();
 		}
 		else {	
 			console.log("Doc greater than 1024");
@@ -169,7 +163,6 @@ class GameManager {
 			this.setUpCompElem();
 			this.setUpUpElem();
 			this.setUpStatElem();
-			this.setUpStats();
 
 			let companions = document.querySelector(".companions");
 			companions.parentNode.removeChild(companions);
@@ -186,16 +179,8 @@ class GameManager {
 			ginfo.append(wrapper);
 			
 			this.setUpFight();
-			this.setUpArena();
-			this.setUpFighters();
 		}
 
-	}
-
-	play() {
-		this.heroManager.playerHero.createHeroCard();
-		this.heroManager.getBuyCompanionCards();
-		this.upgradesManager.createUpgradeCard();
 	}
 
 	genDmgBox(damage, source) {
@@ -212,8 +197,21 @@ class GameManager {
 
 		fightArena.append(dmgBox);
 	}
+
+	play() {
+		this.enemyManager.currentEnemy = this.enemyManager.randomSpawn();
+		this.setUpArena();
+		this.setUpFighters();
+		this.setUpStats();
+		this.heroManager.playerHero.createHeroCard();
+		this.heroManager.playerInterval = this.heroManager.attackEnemy(this.heroManager.playerHero);
+		this.heroManager.getBuyCompanionCards();
+		this.upgradesManager.createUpgradeCard();
+		let healthBar = document.querySelector(".health-bar");
+		healthBar.setAttribute("data-label", this.enemyManager.currentEnemy.name);
+	}
 }
 
 let gm = new GameManager();
 gm.render();
-gm.play();
+// gm.play();

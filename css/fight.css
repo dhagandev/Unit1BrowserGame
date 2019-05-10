@@ -117,6 +117,15 @@
 }
 
 @media only screen and (min-width: 768px) {
+	.health-bar {
+		margin: 0;
+		height: 30px;
+	}
+
+	.health-bar:before {
+		font-size: 22px;
+	}
+
 	.fight {
 		height: 275px;
 	}
@@ -143,6 +152,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
+	.health-bar {
+		margin: 0;
+		height: 35px;
+	}
+
+	.health-bar:before {
+		font-size: 24px;
+	}
+
 	.fight {
 		height: 275px;
 	}

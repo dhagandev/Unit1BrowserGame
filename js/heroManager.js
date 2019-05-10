@@ -11,7 +11,6 @@ class HeroManager {
 		let heroAtkStr = 1;
 		let heroAtkSpd = 0.5;
 		this.playerHero = new Hero("Just Another Hero", "./images/adventurer-idle-2-00.png", heroAtkStr, heroAtkSpd);
-		this.playerInterval = this.attackEnemy(this.playerHero);
 		
 		this.companionTypes = ["Fellow Adventurer"];
 		this.companionIntervals = [];

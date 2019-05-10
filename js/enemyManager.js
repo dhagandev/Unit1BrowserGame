@@ -6,7 +6,6 @@ class EnemyManager {
 	constructor(gm) {
 		this.allEnemyTypes.push("Imposter");
 		this.allEnemyTypes.push("Minotaur");
-		this.currentEnemy = this.randomSpawn();
 		this.gmObject = gm;
 	}
 
@@ -86,17 +85,29 @@ class EnemyManager {
 	getEnemyPositionElement() {
 		let enemyPosition = document.createElement("img");
 		enemyPosition.classList.add("enemy-pos");
-		enemyPosition.src = this.currentEnemy.image;
-		enemyPosition.setAttribute("alt", this.currentEnemy.name + "\'s image");
+		if (this.currentEnemy !== null) {
+			enemyPosition.src = this.currentEnemy.image;
+			enemyPosition.setAttribute("alt", this.currentEnemy.name + "\'s image");
+		}
 		return enemyPosition;
 	}
 
 	getEnemyHealthBar() {
+		console.log("enemy health");
+		console.log(this.currentEnemy);
 		let enemyHealthBar = document.createElement("progress");
 		enemyHealthBar.classList.add("health-bar");
-		enemyHealthBar.setAttribute("max", this.currentEnemy.health);
-		enemyHealthBar.setAttribute("value", this.currentEnemy.health);
-		enemyHealthBar.setAttribute("data-label", this.currentEnemy.name);
+		if (this.currentEnemy !== null) {
+			console.log("print with name");
+			enemyHealthBar.setAttribute("max", this.currentEnemy.health);
+			enemyHealthBar.setAttribute("value", this.currentEnemy.health);
+			enemyHealthBar.setAttribute("data-label", this.currentEnemy.name);
+		}
+		else {
+			enemyHealthBar.setAttribute("max", 1);
+			enemyHealthBar.setAttribute("value", 1);
+			enemyHealthBar.setAttribute("data-label", "Enemy's Health");
+		}
 		return enemyHealthBar;
 	}
 
