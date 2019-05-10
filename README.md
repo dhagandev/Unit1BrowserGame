@@ -10,7 +10,7 @@ Clicker games require a good deal of DOM manipulation, specifically event handle
 Typical clicker games do not directly have the concept of a win or lose. Many clicker game players define a "win" as achieving personal goals such as completing all achievements, earning more than a certain amount of money, having a certain number of companions, etc. 
 
 ### Game Link
-Not available at this time. Sorry, try again later.
+https://dhagandev.github.io/Unit1BrowserGame/
 
 ### How to Play
 This game is fairly easy to pick up, even for new players. As a user, you will click to buy companions or upgrades. From there, it is simply the joy of watching "battles" and seeing your money grow.
@@ -21,26 +21,26 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 * JavaScript
 
 ### Must Haves
-* A hero character
-* One companion that can be bought
-* Two different types of enemies
-* Three types of upgrades
+* ~~A hero character~~
+* ~~One companion that can be bought~~
+* ~~Two different types of enemies~~
+* ~~Three types of upgrades~~
 * Three achievements
-* Tracking stats
-* Player and companions updated based on upgrades
-* Click handlers
+* ~~Tracking stats~~
+* ~~Player and companions updated based on upgrades~~
+* ~~Click handlers~~
 * Hover effects
-* Scrolling
+* ~~Scrolling~~
 
 ### Strecth Goals
-* Players input their name, hero is then named the inputted value
+* ~~Players input their name, hero is then named the inputted value~~
 * Animations
 * Audio
 * More enemies
 * More companions
 * More upgrades
 * More achievements
-* Responsive design
+* ~~Responsive design~~
 
 ### Hand-written Sketching
 (Add image here)
@@ -107,7 +107,22 @@ This game is fairly easy to pick up, even for new players. As a user, you will c
 * https://opengameart.org/content/lpc-wolf-animation
 
 ### Biggest Challenges
-N/A currently. This section is meant as a reflection over the project piece.
+Due to having a complicated connection of classes, my biggest challenge was determining how to convey the information between all the classes. For the managing classes, it was simple. But once I tried to connect the heirarchical classes in, I ran into some trouble. I had to solve this using a rather hacky solution of forcing the classes to have knowledge of one another. 
+
+My second largest challenge came in the form of responsive design. I began with a mobile first approach and had different layouts in mind for the three main platforms - mobile, ipad, and desktop. Once I had mobile in a good place and had the functionality in, I began scaling it to ipad and desktop. In true development fashion, this led to the entire build breaking. It was a slow process to rebuild the application as it took a significant amount of refactoring. Even now, there are areas that I could refactor to make the code more readable.
 
 ### Key Learnings & Take Aways
-N/A currently. This section is meant as a reflection over the project piece.
+This is not quite related to writing the code for this program, but my biggest take away is learning to say no to helping others when I am behind on my own work. Quite frankly, this project is not up to where I would like it to be, and I could not finish my minimum requirements. Normally I love helping others out with their code, but when I started falling behind I had to take a step back and reorganize my priorities to focus on my own work. This included changing the priorities of my minimum requirements. I came to realize that I would rather have a game with less, but more polished features than one with several features that are half baked. I opted to put achievements and hover on hold in favor of polishing the other features. 
+
+### Project Continuation
+* Add in hovering on desktop.
+* Create achievements (code set up, not implemented).
+* Add in additional upgrades
+* Add in additional companions
+* Add in additional enemies
+* Improve styling: New font, no basic colors, etc
+* Max button report updating with monetary gains
+* Audio
+* Animations
+* Imagery on empty upgrade blocks
+* Complex equations to make enemies increasingly more difficult
