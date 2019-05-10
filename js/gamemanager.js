@@ -135,7 +135,6 @@ class GameManager {
 
 	render() {
 		if (document.body.clientWidth < 768) {
-			console.log("Doc less than 768");
 			this.setUpHeader();
 			this.setUpEnemyHealth();
 			this.setUpFight();
@@ -144,7 +143,6 @@ class GameManager {
 			this.setUpStatElem();
 		}
 		else if (document.body.clientWidth < 1024) {
-			console.log("Doc less than 1024");
 			this.setUpHeader();
 			this.setUpEnemyHealth();
 			this.setUpCompElem();
@@ -152,8 +150,7 @@ class GameManager {
 			this.setUpFight();
 			this.setUpStatElem();
 		}
-		else {	
-			console.log("Doc greater than 1024");
+		else {
 			let ginfo = document.querySelector(".game-info");
 			let wrapper = document.createElement("div");
 			wrapper.classList.add("wrapper");

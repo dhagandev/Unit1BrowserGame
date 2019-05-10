@@ -12,8 +12,6 @@ class Hero extends Character {
 	}
 
 	createHeroCard() {
-		console.log("hero card");
-		console.log(document.querySelector(".game-info"));
 		let companionSection = document.querySelector(".companions");
 		let companionCard = document.createElement("div");
 		companionCard.classList.add("companion-card");

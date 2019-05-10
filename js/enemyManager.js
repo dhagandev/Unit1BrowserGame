@@ -99,12 +99,9 @@ class EnemyManager {
 	}
 
 	getEnemyHealthBar() {
-		console.log("enemy health");
-		console.log(this.currentEnemy);
 		let enemyHealthBar = document.createElement("progress");
 		enemyHealthBar.classList.add("health-bar");
 		if (this.currentEnemy !== null) {
-			console.log("print with name");
 			enemyHealthBar.setAttribute("max", this.currentEnemy.health);
 			enemyHealthBar.setAttribute("value", this.currentEnemy.health);
 			enemyHealthBar.setAttribute("data-label", this.currentEnemy.name);
